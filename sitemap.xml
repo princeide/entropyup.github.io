@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://princehao.cn/posts/89f933a4bf19/</loc>
+    
+    <lastmod>2022-12-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://princehao.cn/posts/61e4d787a5af/</loc>
+    
+    <lastmod>2022-12-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://princehao.cn/about/index.html</loc>
     
     <lastmod>2022-08-08</lastmod>
@@ -10,28 +28,10 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://princehao.cn/2022/08/08/myblog/</loc>
-    
-    <lastmod>2022-08-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://princehao.cn/2022/07/17/hello-world/</loc>
-    
-    <lastmod>2022-07-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://princehao.cn/</loc>
-    <lastmod>2022-08-22</lastmod>
+    <lastmod>2022-12-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
