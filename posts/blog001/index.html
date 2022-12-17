@@ -18,23 +18,23 @@
   <meta name="author" content="王子豪">
   <meta name="keywords" content="">
   
-    <meta name="description" content="我是谁">
+    <meta name="description" content="我的第一篇博文，和大家分享如何基于Hexo和Fluid一步一步搭建自己专属的个人博客网站">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+Fluid搭建自己的个人博客网站！">
-<meta property="og:url" content="https://princehao.cn/posts/89f933a4bf19/index.html">
+<meta property="og:title" content="Hexo+Fluid搭建个人博客网站">
+<meta property="og:url" content="https://princehao.cn/posts/blog001/index.html">
 <meta property="og:site_name" content="Prince_hao">
-<meta property="og:description" content="我是谁">
+<meta property="og:description" content="我的第一篇博文，和大家分享如何基于Hexo和Fluid一步一步搭建自己专属的个人博客网站">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://princehao.cn/img/blog001/apple.jpeg">
+<meta property="og:image" content="https://princehao.cn/img/blog001/cover.jpg">
 <meta property="article:published_time" content="2022-12-15T14:10:09.000Z">
-<meta property="article:modified_time" content="2022-12-17T08:09:49.834Z">
+<meta property="article:modified_time" content="2022-12-17T10:09:16.081Z">
 <meta property="article:author" content="王子豪">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://princehao.cn/img/blog001/apple.jpeg">
+<meta name="twitter:image" content="https://princehao.cn/img/blog001/cover.jpg">
   
   
   
-  <title>Hexo+Fluid搭建自己的个人博客网站！ - Prince_hao</title>
+  <title>Hexo+Fluid搭建个人博客网站 - Prince_hao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo+Fluid搭建自己的个人博客网站！"></span>
+            <span id="subtitle" data-typed-text="Hexo+Fluid搭建个人博客网站"></span>
           
         </div>
 
@@ -245,7 +245,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          5.8k 字
+          6.5k 字
         
       </span>
     
@@ -257,7 +257,7 @@
         
         
           <!-- compatible with older versions-->
-          49 分钟
+          55 分钟
         
       </span>
     
@@ -295,36 +295,35 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo+Fluid搭建自己的个人博客网站！</h1>
+            <h1 style="display: none">Hexo+Fluid搭建个人博客网站</h1>
             
             
               <div class="markdown-body">
                 
-                <p><img src="/img/blog001/apple.jpeg" srcset="/img/loading.gif" lazyload alt="图片"></p>
-<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h1><p>这篇博文我好像已经拖更半年了，半年前兴致勃勃地买了域名、搭起了个人博客，结果到现在网页上还是空空如也，马上就要2023年了，准备从现在开始，每天坚持做一件事，希望时间的积分效应能让我有所收益。<br>本博文将介绍如何从零开始一步一步搭建出属于自己的个人博客网站，使用的框架为Hexo+Fluid。在写作时主要参考了以下博文，在此对这些作者表示由衷的感谢：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904131266609165">(1) 彻底搞懂如何使用Hexo+GitHubPages搭建个人微博</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249/">(2) GitHub+Hexo 搭建个人网站详细教程</a></p>
-<h1 id="2-配置GitHubPages"><a href="#2-配置GitHubPages" class="headerlink" title="2. 配置GitHubPages"></a>2. 配置GitHubPages</h1><p>简单来说，GitHubPages的作用是提供免费的静态网站托管服务，我们只需要把自己写的html文档保存在其仓库中，该服务就会对这些文件进行处理并展示为网页的样式，即近似实现了<strong>Web服务器</strong>的功能，创建GitHubPages需要在GitHub上完成（注册GitHub账号以及配置SSH公钥可见<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458">这篇博文</a>），具体步骤为：<br>(1) 点击GitHub首页右上角的“+”按钮，在弹出窗口选择“New respository”；<br>(2) 在新页面中的“Repository name”一栏输入<strong>你GitHub的用户名</strong>。注意：必须输入用户名，否则创建的将不是GitHubPages而是一个普通的仓库；<br>(3) 勾选“Initialize this repository with a README”选项，并点击“Create Respository”按钮。<br>此时在浏览器输入https:&#x2F;&#x2F;你GitHub的用户名.github.io后，已经可以看到一个简陋的界面，这就说明你已经成功开启GithubPages服务了。</p>
-<h1 id="3-安装Hexo并初始化博客"><a href="#3-安装Hexo并初始化博客" class="headerlink" title="3. 安装Hexo并初始化博客"></a>3. 安装Hexo并初始化博客</h1><p>Hexo是一个快速且简洁的博客框架，用户可以通过Hexo快速生成一个完整的博客页面。Hexo使用Node.js来对页面进行快速渲染，因此需要同时安装Node.js和Hexo：</p>
-<h2 id="3-1-安装Node-js"><a href="#3-1-安装Node-js" class="headerlink" title="3.1 安装Node.js"></a>3.1 安装Node.js</h2><p>可在<a target="_blank" rel="noopener" href="https://nodejs.org/en/">官网</a>直接安装Node.js，建议使用Node.js 10.0及以上版本。可以在cmd中输入以下命令检查自己是否安装成功：</p>
+                <p>这篇博文我已经拖更半年了，半年前兴致勃勃地买了域名、搭起了个人博客，结果到现在网页上还是空空如也，马上就要2023年了，准备从现在开始，每天坚持做一件事，希望时间的积分效应能让我有所收益。<br>本博文将介绍如何从零开始一步一步搭建出属于自己的个人博客网站，使用的框架为Hexo+Fluid。在写作时主要参考了以下博文，在此对这些作者表示由衷的感谢：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904131266609165">(1) 彻底搞懂如何使用Hexo+GitHubPages搭建个人微博</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249/">(2) GitHub+Hexo 搭建个人网站详细教程</a><br>本文会持续更新，最近一次更新时间：2022年12月17日</p>
+<h1 id="1-配置GitHubPages"><a href="#1-配置GitHubPages" class="headerlink" title="1. 配置GitHubPages"></a>1. 配置GitHubPages</h1><p>简单来说，GitHubPages的作用是提供免费的静态网站托管服务，我们只需要把自己写的html文档保存在其仓库中，该服务就会对这些文件进行处理并展示为网页的样式，即近似实现了<strong>Web服务器</strong>的功能，创建GitHubPages需要在GitHub上完成（注册GitHub账号以及配置SSH公钥可见<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458">这篇博文</a>），具体步骤为：<br>(1) 点击GitHub首页右上角的“+”按钮，在弹出窗口选择“New respository”；<br>(2) 在新页面中的“Repository name”一栏输入<strong>你GitHub的用户名</strong>。注意：必须输入用户名，否则创建的将不是GitHubPages而是一个普通的仓库；<br>(3) 勾选“Initialize this repository with a README”选项，并点击“Create Respository”按钮。<br>此时在浏览器输入https:&#x2F;&#x2F;你GitHub的用户名.github.io后，已经可以看到一个简陋的界面，这就说明你已经成功开启GithubPages服务了。</p>
+<h1 id="2-安装Hexo并初始化博客"><a href="#2-安装Hexo并初始化博客" class="headerlink" title="2. 安装Hexo并初始化博客"></a>2. 安装Hexo并初始化博客</h1><p>Hexo是一个快速且简洁的博客框架，用户可以通过Hexo快速生成一个完整的博客页面。Hexo使用Node.js来对页面进行快速渲染，因此需要同时安装Node.js和Hexo：</p>
+<h2 id="2-1-安装Node-js"><a href="#2-1-安装Node-js" class="headerlink" title="2.1 安装Node.js"></a>2.1 安装Node.js</h2><p>可在<a target="_blank" rel="noopener" href="https://nodejs.org/en/">官网</a>直接安装Node.js，建议使用Node.js 10.0及以上版本。可以在cmd中输入以下命令检查自己是否安装成功：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">node <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></figure>
-<h2 id="3-2-安装Hexo"><a href="#3-2-安装Hexo" class="headerlink" title="3.2 安装Hexo"></a>3.2 安装Hexo</h2><p>npm是随Node.js一起安装的包管理器，可以使用npm直接安装Hexo：</p>
+<h2 id="2-2-安装Hexo"><a href="#2-2-安装Hexo" class="headerlink" title="2.2 安装Hexo"></a>2.2 安装Hexo</h2><p>npm是随Node.js一起安装的包管理器，可以使用npm直接安装Hexo：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm install <span class="hljs-literal">-g</span> hexo<span class="hljs-literal">-cli</span><br></code></pre></td></tr></table></figure>
-<h2 id="3-3-初始化博客"><a href="#3-3-初始化博客" class="headerlink" title="3.3 初始化博客"></a>3.3 初始化博客</h2><p>在你喜欢的位置上新建一个文件夹，命名为《<strong>你GitHub的用户名.github.io</strong>》，该文件夹以后统称为<strong>站点根目录</strong>。进入到该目录的上级目录打开cmd，输入以下命令：</p>
+<h2 id="2-3-初始化博客"><a href="#2-3-初始化博客" class="headerlink" title="2.3 初始化博客"></a>2.3 初始化博客</h2><p>在你喜欢的位置上新建一个文件夹，命名为《<strong>你GitHub的用户名.github.io</strong>》，该文件夹以后统称为<strong>站点根目录</strong>。进入到该目录的上级目录打开cmd，输入以下命令：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo init &lt;folder&gt;   <span class="hljs-comment"># 使用Hexo初始化站点根目录，即你新建的文件夹名</span><br><span class="hljs-built_in">cd</span> &lt;folder&gt;   <span class="hljs-comment"># 打开该文件</span><br>npm install   <span class="hljs-comment"># 安装npm所依赖的库</span><br></code></pre></td></tr></table></figure>
 <p>完成上述命令后，Hexo就会自动在站点根目录中生成一系列用于生成博客的文件，你只需要输入以下命令（需要在cmd中进入站点根目录），就可以在本地浏览博客：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo g   <span class="hljs-comment"># 生成博客，等同于 hexo generate</span><br>hexo s   <span class="hljs-comment"># 本地预览，等同于 hexo server</span><br></code></pre></td></tr></table></figure>
 <p>在浏览器中输入<code>http://localhost:4000</code>，就可以在本地看到一个原始的博客页面。此时，站点根目录的目录结构如下：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs powershell">|<span class="hljs-literal">--</span> _config.yml<br>|<span class="hljs-literal">--</span> node_modules<br>|<span class="hljs-literal">--</span> package<span class="hljs-literal">-lock</span>.json<br>|<span class="hljs-literal">--</span> package.json<br>|<span class="hljs-literal">--</span> scaffolds<br>|<span class="hljs-literal">--</span> source<br>|<span class="hljs-literal">--</span> themes<br>|<span class="hljs-literal">--</span> public<br>|<span class="hljs-literal">--</span> db.json<br></code></pre></td></tr></table></figure>
 <p>事实上，在执行<code>hexo g</code>命令后，Hexo将<code>souce</code>文件夹下的Markdown和HTML文件解析到了<code>public</code>文件夹下，并生成了<code>db.json</code>文件。</p>
-<h1 id="4-将本地博客部署到GitHubPages"><a href="#4-将本地博客部署到GitHubPages" class="headerlink" title="4. 将本地博客部署到GitHubPages"></a>4. 将本地博客部署到GitHubPages</h1><p>最直接的方式使用git将本地博客文件夹关联到GitHub的远程仓库，并且把本地文件push到对应的仓库中。Hexo提供了一种更为简洁的方式，只需要在<code>_config.yml</code>文件中进行配置并在命令行中输入相应命令就可以将本地博客发布到GitHubPages上。<br>首先，打开<code>_config.yml</code>文件，在deployment配置项下设置如下参数：</p>
+<h1 id="3-将本地博客部署到GitHubPages"><a href="#3-将本地博客部署到GitHubPages" class="headerlink" title="3. 将本地博客部署到GitHubPages"></a>3. 将本地博客部署到GitHubPages</h1><p>最直接的方式使用git将本地博客文件夹关联到GitHub的远程仓库，并且把本地文件push到对应的仓库中。Hexo提供了一种更为简洁的方式，只需要在<code>_config.yml</code>文件中进行配置并在命令行中输入相应命令就可以将本地博客发布到GitHubPages上。<br>首先，打开<code>_config.yml</code>文件，在deployment配置项下设置如下参数：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>    <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:你GitHub的用户名/你GitHub的用户名.github.io.git</span><br>    <span class="hljs-attr">branch:</span> <span class="hljs-string">master</span><br></code></pre></td></tr></table></figure>
 <p>然后，安装以下插件：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm install hexo<span class="hljs-literal">-deployer-git</span> —save<br></code></pre></td></tr></table></figure>
 <p>最后，执行以下命令发布本地博客到远程仓库：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo d   <span class="hljs-comment"># 推送博客，等同于 hexo deploy</span><br></code></pre></td></tr></table></figure>
 <p>此时，在浏览器中输入地址<code>你GitHub的用户名.github.io</code>，就可以在互联网上看到本地的博客了（上传需要时间，如果看不到等待一段时间即可）。</p>
-<h1 id="5-配置域名"><a href="#5-配置域名" class="headerlink" title="5. 配置域名"></a>5. 配置域名</h1><p>用上述方式访问你的博客太过复杂，我们可以选用自己喜欢的域名作为网址供人访问。因此，我们需要将自己购买的域名和GitHubPages进行绑定。</p>
-<h2 id="5-1-购买域名"><a href="#5-1-购买域名" class="headerlink" title="5.1 购买域名"></a>5.1 购买域名</h2><p>目前国内主流的域名代理厂商包括<a target="_blank" rel="noopener" href="https://cloud.tencent.com/">腾讯云</a>、<a target="_blank" rel="noopener" href="https://www.aliyun.com/">阿里云</a>等，我个人使用的是腾讯云，便宜的域名一般10-20块钱一年。</p>
-<h2 id="5-2-添加记录"><a href="#5-2-添加记录" class="headerlink" title="5.2 添加记录"></a>5.2 添加记录</h2><p>购买域名后进入管理控制台的域名列表，找到你的个性化域名并点击解析，添加以下两条记录：</p>
+<h1 id="4-配置域名"><a href="#4-配置域名" class="headerlink" title="4. 配置域名"></a>4. 配置域名</h1><p>用上述方式访问你的博客太过复杂，我们可以选用自己喜欢的域名作为网址供人访问。因此，我们需要将自己购买的域名和GitHubPages进行绑定。</p>
+<h2 id="4-1-购买域名"><a href="#4-1-购买域名" class="headerlink" title="4.1 购买域名"></a>4.1 购买域名</h2><p>目前国内主流的域名代理厂商包括<a target="_blank" rel="noopener" href="https://cloud.tencent.com/">腾讯云</a>、<a target="_blank" rel="noopener" href="https://www.aliyun.com/">阿里云</a>等，我个人使用的是腾讯云，便宜的域名一般10-20块钱一年。</p>
+<h2 id="4-2-添加记录"><a href="#4-2-添加记录" class="headerlink" title="4.2 添加记录"></a>4.2 添加记录</h2><p>购买域名后进入管理控制台的域名列表，找到你的个性化域名并点击解析，添加以下两条记录：</p>
 <table>
 <thead>
 <tr>
@@ -366,32 +365,32 @@
 </tr>
 </tbody></table>
 <p>这样的目的是能够同时添加顶级域名（通过A解析）和子域名（通过CNAME解析），这也是GitHubPages推荐的方式，详细说明可见<a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">官方文档</a>。<br>之后，在GitHub中打开该项目（即名称为“你GitHub的用户名.github.io”的仓库，需要注意此时必须关闭vpn，否则会弹出404无法进入），在<code>Settings-Pages-Custom domain</code>中输入你购买的域名，并点击<code>Save</code>保存。注意：只需要输入域名，<strong>不要添加www</strong>！例如你的域名是<code>abc.com</code>，则不要输入<code>www.abc.com</code>，否则以后在输入网址访问博客时必须带有www。<br>现在，你用三种域名都可以访问到你的博客：<code>www.abc.com</code>、<code>abc.com</code>和<code>你GitHub的用户名.github.io</code>。</p>
-<h2 id="5-3-配置CNAME文件"><a href="#5-3-配置CNAME文件" class="headerlink" title="5.3 配置CNAME文件"></a>5.3 配置CNAME文件</h2><p>设置<code>Custom domain</code>的步骤在每次执行<code>hexo d</code>后都会重置失效，为了一劳永逸，需要在站点根目录的<code>source</code>文件夹内新建一个txt文件，在其中<strong>输入你购买的域名</strong>（仍然不带www），并将txt文件<strong>重命名为CNAME</strong>（要把.txt删掉！）。这样就可以解决每次都需要修改<code>Custom domain</code>的问题。</p>
-<h1 id="6-更换主题"><a href="#6-更换主题" class="headerlink" title="6. 更换主题"></a>6. 更换主题</h1><h2 id="6-1-选择你喜欢的主题"><a href="#6-1-选择你喜欢的主题" class="headerlink" title="6.1 选择你喜欢的主题"></a>6.1 选择你喜欢的主题</h2><p>个人认为Hexo默认的主题不够好看，可以选择不同类型的主题，官网提供了丰富的<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题样式</a>，常用的包括Fluid、Next等。本博客将以<strong>Fluid</strong>为主题进行讲解。</p>
-<h2 id="6-2-主题安装"><a href="#6-2-主题安装" class="headerlink" title="6.2 主题安装"></a>6.2 主题安装</h2><p>在站点根目录下输入以下命令就可以完成Fluid的安装：</p>
+<h2 id="4-3-配置CNAME文件"><a href="#4-3-配置CNAME文件" class="headerlink" title="4.3 配置CNAME文件"></a>4.3 配置CNAME文件</h2><p>设置<code>Custom domain</code>的步骤在每次执行<code>hexo d</code>后都会重置失效，为了一劳永逸，需要在站点根目录的<code>source</code>文件夹内新建一个txt文件，在其中<strong>输入你购买的域名</strong>（仍然不带www），并将txt文件<strong>重命名为CNAME</strong>（要把.txt删掉！）。这样就可以解决每次都需要修改<code>Custom domain</code>的问题。</p>
+<h1 id="5-更换主题"><a href="#5-更换主题" class="headerlink" title="5. 更换主题"></a>5. 更换主题</h1><h2 id="5-1-选择你喜欢的主题"><a href="#5-1-选择你喜欢的主题" class="headerlink" title="5.1 选择你喜欢的主题"></a>5.1 选择你喜欢的主题</h2><p>个人认为Hexo默认的主题不够好看，可以选择不同类型的主题，官网提供了丰富的<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题样式</a>，常用的包括Fluid、Next等。本博客将以<strong>Fluid</strong>为主题进行讲解。</p>
+<h2 id="5-2-主题安装"><a href="#5-2-主题安装" class="headerlink" title="5.2 主题安装"></a>5.2 主题安装</h2><p>在站点根目录下输入以下命令就可以完成Fluid的安装：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm install <span class="hljs-literal">--save</span> hexo<span class="hljs-literal">-theme-fluid</span><br></code></pre></td></tr></table></figure>
 <p>完成安装后，可以在<code>themes</code>文件夹中看到<code>fluid</code>文件夹，说明安装成功。官方给出了非常详细的<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/">配置文档</a>，想要配置最适合自己风格的主题，建议自己阅读文档。接下来一节将给出一些重要的配置。</p>
-<h2 id="6-3-一些重要的配置"><a href="#6-3-一些重要的配置" class="headerlink" title="6.3 一些重要的配置"></a>6.3 一些重要的配置</h2><h3 id="6-3-1-初始化后的必要步骤"><a href="#6-3-1-初始化后的必要步骤" class="headerlink" title="6.3.1 初始化后的必要步骤"></a>6.3.1 初始化后的必要步骤</h3><p>首先，安装Fluid后，需要在根目录下新建一个<code>_config.fluid.yml</code>文件，并将<code>themes/fluid/_config.yml</code>中的所有内容复制过去。<br>然后，在<code>_config.yml</code>文件中指定主题和语言：</p>
+<h2 id="5-3-一些重要的配置"><a href="#5-3-一些重要的配置" class="headerlink" title="5.3 一些重要的配置"></a>5.3 一些重要的配置</h2><h3 id="5-3-1-初始化后的必要步骤"><a href="#5-3-1-初始化后的必要步骤" class="headerlink" title="5.3.1 初始化后的必要步骤"></a>5.3.1 初始化后的必要步骤</h3><p>首先，安装Fluid后，需要在根目录下新建一个<code>_config.fluid.yml</code>文件，并将<code>themes/fluid/_config.yml</code>中的所有内容复制过去。<br>然后，在<code>_config.yml</code>文件中指定主题和语言：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">theme: fluid  <span class="hljs-comment"># 指定主题</span><br>language: zh<span class="hljs-literal">-CN</span>  <span class="hljs-comment"># 指定语言</span><br></code></pre></td></tr></table></figure>
 <p>最后，可以选择设置主题的自动更新，在根目录下输入以下命令：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm update <span class="hljs-literal">--save</span> hexo<span class="hljs-literal">-theme-fluid</span><br></code></pre></td></tr></table></figure>
-<h3 id="6-3-2-创建关于页"><a href="#6-3-2-创建关于页" class="headerlink" title="6.3.2 创建关于页"></a>6.3.2 创建关于页</h3><p>关于页可以展示你的基本信息、兴趣、联系方式等，首次使用时需要先进行创建，在根目录输入以下命令：</p>
+<h3 id="5-3-2-创建关于页"><a href="#5-3-2-创建关于页" class="headerlink" title="5.3.2 创建关于页"></a>5.3.2 创建关于页</h3><p>关于页可以展示你的基本信息、兴趣、联系方式等，首次使用时需要先进行创建，在根目录输入以下命令：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo new page about<br></code></pre></td></tr></table></figure>
 <p>创建成功后修改 <code>/source/about/index.md</code>，添加 <code>layout</code> 属性：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">关于我</span><br><span class="hljs-attr">layout:</span> <span class="hljs-string">about</span>  <span class="hljs-comment"># 必须存在且不能修改</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
-<h3 id="6-3-3-覆盖配置"><a href="#6-3-3-覆盖配置" class="headerlink" title="6.3.3 覆盖配置"></a>6.3.3 覆盖配置</h3><p>当主题更新时可能导致原有配置丢失，因此在初始化后我们建立了<code>_config.fluid.yml</code>，<strong>之后所有的配置都只需要在根目录下的_config.fluid.yml文件中修改</strong>，而<code>themes/fluid/_config.yml</code>中的修改则无效、被覆盖。<br>注意：以下的所有配置也都是在<code>_config.fluid.yml</code>中修改！</p>
-<h3 id="6-3-4-显示网站数据统计"><a href="#6-3-4-显示网站数据统计" class="headerlink" title="6.3.4 显示网站数据统计"></a>6.3.4 显示网站数据统计</h3><p>推荐采用leancloud实现显示网站的访客人数和总访问量，配置如下：</p>
+<h3 id="5-3-3-覆盖配置"><a href="#5-3-3-覆盖配置" class="headerlink" title="5.3.3 覆盖配置"></a>5.3.3 覆盖配置</h3><p>当主题更新时可能导致原有配置丢失，因此在初始化后我们建立了<code>_config.fluid.yml</code>，<strong>之后所有的配置都只需要在根目录下的_config.fluid.yml文件中修改</strong>，而<code>themes/fluid/_config.yml</code>中的修改则无效、被覆盖。<br>注意：以下的所有配置也都是在<code>_config.fluid.yml</code>中修改！</p>
+<h3 id="5-3-4-显示网站数据统计"><a href="#5-3-4-显示网站数据统计" class="headerlink" title="5.3.4 显示网站数据统计"></a>5.3.4 显示网站数据统计</h3><p>推荐采用leancloud实现显示网站的访客人数和总访问量，配置如下：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs powershell">footer:<br>  statistics:<br>    enable: false<br>    source: <span class="hljs-string">&quot;leancloud&quot;</span>  <span class="hljs-comment"># 在此处输入leancloud</span><br>    pv_format: <span class="hljs-string">&quot;总访问量 &#123;&#125; 次&quot;</span>  <span class="hljs-comment"># 显示的文本，&#123;&#125;是数字的占位符（必须包含)，下同</span><br>    uv_format: <span class="hljs-string">&quot;总访客数 &#123;&#125; 人&quot;</span><br></code></pre></td></tr></table></figure>
 <p>想要使用leancloud的功能，需要注册账号、新建应用并获取<code>App ID</code>和<code>App Key</code>，具体操作可以查看<a target="_blank" rel="noopener" href="https://blog.csdn.net/lijing742180/article/details/87928554">这篇博文</a>。之后将获取的信息做如下配置：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell">leancloud:<br>    app_id: 你获取的App ID<br>    app_key: 你获取的App Key<br></code></pre></td></tr></table></figure>
 <p>这样就可以实现网站数据统计，需要注意的是在<strong>本地测试时可能会出现统计数据异常</strong>，这属于<strong>正常现象</strong>。</p>
-<h3 id="6-3-5-开启博客评论功能"><a href="#6-3-5-开启博客评论功能" class="headerlink" title="6.3.5 开启博客评论功能"></a>6.3.5 开启博客评论功能</h3><p>推荐使用基于leancloud的Valine，首先需要做如下配置：</p>
+<h3 id="5-3-5-开启博客评论功能"><a href="#5-3-5-开启博客评论功能" class="headerlink" title="5.3.5 开启博客评论功能"></a>5.3.5 开启博客评论功能</h3><p>推荐使用基于leancloud的Valine，首先需要做如下配置：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 评论插件</span><br><span class="hljs-comment"># Comment plugin</span><br>comments:<br>	enable: true<br>    <span class="hljs-built_in">type</span>: valine  <span class="hljs-comment"># 在此处输入valine</span><br></code></pre></td></tr></table></figure>
 <p>之后，在valine选项中做如下配置：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># Valine</span><br>valine:<br>  appId: 你获取的App ID<br>  appKey: 你获取的App Key<br></code></pre></td></tr></table></figure>
 <p>访问<a target="_blank" rel="noopener" href="https://valine.js.org/">Valine官网</a>，可以自定义评论系统的细节。</p>
-<h1 id="7-撰写博客并发布"><a href="#7-撰写博客并发布" class="headerlink" title="7. 撰写博客并发布"></a>7. 撰写博客并发布</h1><h2 id="7-1-撰写博客"><a href="#7-1-撰写博客" class="headerlink" title="7.1 撰写博客"></a>7.1 撰写博客</h2><p>经过前面的六步，我们终于完成了一个博客系统的搭建，接下来我们就可以撰写自己的博文了。Hexo采用Markdown语法来编辑博文，这里推荐采用<a target="_blank" rel="noopener" href="https://www.csdn.net/">csdn</a>的发布文章功能，先在csdn上写博文，之后导出为.md格式，就可以生成自己的博文。</p>
-<h2 id="7-2-发布博客"><a href="#7-2-发布博客" class="headerlink" title="7.2 发布博客"></a>7.2 发布博客</h2><p>根据<a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">官方文档</a>，Hexo共有三种<code>layout</code>（排版形式）：</p>
+<h1 id="6-撰写博客并发布"><a href="#6-撰写博客并发布" class="headerlink" title="6. 撰写博客并发布"></a>6. 撰写博客并发布</h1><h2 id="6-1-撰写博客"><a href="#6-1-撰写博客" class="headerlink" title="6.1 撰写博客"></a>6.1 撰写博客</h2><p>经过前面的六步，我们终于完成了一个博客系统的搭建，接下来我们就可以撰写自己的博文了。Hexo采用Markdown语法来编辑博文，这里推荐采用<a target="_blank" rel="noopener" href="https://www.csdn.net/">csdn</a>的发布文章功能，先在csdn上写博文，之后导出为.md格式，就可以生成自己的博文。</p>
+<h2 id="6-2-发布博客"><a href="#6-2-发布博客" class="headerlink" title="6.2 发布博客"></a>6.2 发布博客</h2><p>根据<a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">官方文档</a>，Hexo共有三种<code>layout</code>（排版形式）：</p>
 <table>
 <thead>
 <tr>
@@ -420,16 +419,27 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo c   <span class="hljs-comment"># 即hexo clean，清除缓存</span><br>hexo g<br>hexo s<br></code></pre></td></tr></table></figure>
 <p>(4) 本地查看无误后，上传到网站：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo d<br></code></pre></td></tr></table></figure>
-<h2 id="7-3-设置Front-matter"><a href="#7-3-设置Front-matter" class="headerlink" title="7.3 设置Front-matter"></a>7.3 设置Front-matter</h2><p>一篇博文的前页（即<code>Front-matter</code>）描述了这篇博文的一些基本信息，根据<a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter">官方文档</a>，共有11类设置。这里主要介绍一下比较常用的设置：<br>(1) Categories（类别）<br>该属性用于对博文进行分类，例如是属于python还是属于java。类别有层次之分，在描述时需要从高到低，例如：</p>
+<h2 id="6-3-设置Front-matter"><a href="#6-3-设置Front-matter" class="headerlink" title="6.3 设置Front-matter"></a>6.3 设置Front-matter</h2><p>一篇博文的前页（即<code>Front-matter</code>）描述了这篇博文的一些基本信息，根据<a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter">官方文档</a>，共有11类设置。这里主要介绍一下比较常用的设置：<br>(1) categories（类别）<br>该属性用于对博文进行分类，例如是属于python还是属于java。类别有层次之分，在描述时需要从高到低，例如：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">categories:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Programming</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Python</span><br></code></pre></td></tr></table></figure>
-<p> 本例说明该博文属于<code>Programming</code>类别下的<code>Python</code>子类。<br> (2) Tags（标签）<br> 该属性用于描述博文的性质，例如该博文是经验分享还是刷题解析。标签是没有层次之分，描述时无顺序要求，例如：<br> <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"> <span class="hljs-attr">tags:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">经验</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">后端</span><br></code></pre></td></tr></table></figure><br>本例说明该博文主要讲述了后端的经验分享。<br>(3) url设置<br>Hexo中一篇博文默认的url为：</p>
+<p> 本例说明该博文属于<code>Programming</code>类别下的<code>Python</code>子类。<br> (2) tags（标签）<br> 该属性用于描述博文的性质，例如该博文是经验分享还是刷题解析。标签是没有层次之分，描述时无顺序要求，例如：<br> <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"> <span class="hljs-attr">tags:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">经验</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">后端</span><br></code></pre></td></tr></table></figure><br>本例说明该博文主要讲述了后端的经验分享。<br>(3) excerpt（摘要）<br>摘要会出现在博客首页，对整篇博文进行一个简要的介绍。根据<a target="_blank" rel="noopener" href="https://www.dazhuanlan.com/sunningjiao/topics/1360401">资料</a>，设置摘要共有三种方法。官方推荐的方法是使用 <code>&lt;!-- more --&gt;</code> 进行手动截断，例如：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">这是标题</span><br><span class="hljs-meta">---</span><br><span class="hljs-string">这是摘要</span><br><span class="hljs-string">&lt;!--</span> <span class="hljs-string">more</span> <span class="hljs-string">--&gt;</span><br><span class="hljs-string">这是正文</span>   <span class="hljs-comment"># 注意：正文在显示时仍包括了上述摘要部分</span><br></code></pre></td></tr></table></figure>
+<p>我个人推荐在前页中添加<code>excerpt</code>字段来手动输入摘要：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">这是标题</span><br><span class="hljs-attr">excerpt:</span> <span class="hljs-string">这是摘要</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+<p>这样设置摘要自由度较高，无需担心摘要和正文内容不同。</p>
+<h2 id="6-4-设置博文的url"><a href="#6-4-设置博文的url" class="headerlink" title="6.4 设置博文的url"></a>6.4 设置博文的url</h2><p>Hexo中一篇博文默认的url为：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">:year/:month/:day/:title/</span>   <span class="hljs-comment"># 年/月/日/文章路径+博文名字</span><br></code></pre></td></tr></table></figure>
-<p>这样十分容易造成中文url乱码，实际应用效果很差。<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41942221/article/details/116007091">这篇博文</a>给出了两种解决方案，我更推荐使用Hash的方式，即在站点根目录下的<code>_config.yml</code>文件中做如下设置：</p>
+<p>这样十分容易造成中文url乱码，实际应用效果很差。<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41942221/article/details/116007091">这篇博文</a>给出了两种解决方案。这里我推荐将<code>source/_posts</code>下的各个md文件按照类似<code>blog00x</code>的顺序进行命名，然后在站点根目录下的<code>_config.yml</code>文件中做如下设置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">permalink:</span> <span class="hljs-string">posts/:title/</span><br></code></pre></td></tr></table></figure>
+<p>对于懒人则可以使用Hash的方式，这样不需要进行统一编号，设置如下：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">permalink:</span> <span class="hljs-string">posts/:hash/</span><br></code></pre></td></tr></table></figure>
-
-<p>这里参考了<a target="_blank" rel="noopener" href="https://zkqiang.cn/">官方推送的个人博客网站</a>，它没有使用年月日来设置url，而是采用posts来设置url，这样可以更简洁。</p>
-<h1 id="8-配置sitemap"><a href="#8-配置sitemap" class="headerlink" title="8. 配置sitemap"></a>8. 配置sitemap</h1><p>虽然你的网站已经成功部署，但是实际上它还是和“单机版”一样，这是因为你博客的任何内容都<strong>没有被搜索引擎收录</strong>，其他用户在搜索相关内容时，搜索引擎是不会显示你的内容的。想要自己的博客被搜索引擎收录，你需要<strong>配置各大搜索引擎的sitemap</strong>。我自己尝试配置了谷歌和百度的sitemap，但是一直没有成功。以下资料可供大家参考：<br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1946996">(1) Hexo-生成sitemap站点地图</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3ae41ef36b43">(2) Hexo 博客添加百度sitemap以及进行SEO优化</a></p>
-<h1 id="9-结语"><a href="#9-结语" class="headerlink" title="9. 结语"></a>9. 结语</h1><p>以上就是基于Hexo+Fluid的个人博客系统搭建与使用的完整教程了。从第八步中我们可以看出来，如果你的目的是想要博文被大家看到，那么个人博客系统远远不如一些主流的平台，如微信、知乎、掘金等。但是从零搭建起只属于自己的网站还是非常有成就感的，祝大家都能找到人生的意义所在。</p>
+<p>值得注意的是这里参考了<a target="_blank" rel="noopener" href="https://zkqiang.cn/">官方推送的个人博客网站</a>，没有使用年月日来设置url，而是采用<code>posts</code>来设置url，避免网址冗余。</p>
+<h2 id="6-4-设置博文中的图片"><a href="#6-4-设置博文中的图片" class="headerlink" title="6.4 设置博文中的图片"></a>6.4 设置博文中的图片</h2><p>一篇博文的图片可以分为两类：第一类是在首页显示的博文封面图，第二类是在文章正文中显示的内容图。放置与引用这些图片有很多很多种方式，这里我推荐一下我个人的设置，并不代表它是最方便、最合适的，但是我个人用起来最为舒服，具体如下：<br>对于每一篇博文（即放在_posts中的每一个md文件），都在<code>source/img</code>目录下新建一个和博客同名的文件夹，将所有的图片（包括封面图和内容图）统一放在其中。对于封面图，在博文md文件的前页中添加如下信息：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">index_img:</span> <span class="hljs-string">/img/博客名/图片名</span>  <span class="hljs-comment"># 图片要加扩展名jpg等，下同</span><br></code></pre></td></tr></table></figure>
+<p>对于内容图，直接在正文的相应位置做如下引用即可：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-type">![</span><span class="hljs-string">图片标题](/img/博客名/图片名)</span><br></code></pre></td></tr></table></figure>
+<p>如果之后的网站具有一定规模，图片较多难以管理，可以采用图床进行云管理，详见<a target="_blank" rel="noopener" href="https://www.cnblogs.com/huanhao/p/picup.html">这里</a>。</p>
+<h1 id="7-配置sitemap"><a href="#7-配置sitemap" class="headerlink" title="7. 配置sitemap"></a>7. 配置sitemap</h1><p>虽然你的网站已经成功部署，但是实际上它还是和“单机版”一样，这是因为你博客的任何内容都<strong>没有被搜索引擎收录</strong>，其他用户在搜索相关内容时，搜索引擎是不会显示你的内容的。想要自己的博客被搜索引擎收录，你需要<strong>配置各大搜索引擎的sitemap</strong>。我自己尝试配置了谷歌和百度的sitemap，但是一直没有成功。以下资料可供大家参考：<br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1946996">(1) Hexo-生成sitemap站点地图</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3ae41ef36b43">(2) Hexo 博客添加百度sitemap以及进行SEO优化</a></p>
+<h1 id="8-结语"><a href="#8-结语" class="headerlink" title="8. 结语"></a>8. 结语</h1><p>以上就是基于Hexo+Fluid的个人博客系统搭建与使用的完整教程了。从第七步中我们可以看出来，如果你的目的是想要博文被大家看到，那么个人博客系统远远不如一些主流的平台，如微信、知乎、掘金等。但是从零搭建起只属于自己的网站还是非常有成就感的，祝大家都能找到人生的意义所在。</p>
 
                 
               </div>
@@ -447,8 +457,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo+Fluid搭建自己的个人博客网站！</div>
-      <div>https://princehao.cn/posts/89f933a4bf19/</div>
+      <div>Hexo+Fluid搭建个人博客网站</div>
+      <div>https://princehao.cn/posts/blog001/</div>
     </div>
     <div class="license-meta">
       
@@ -490,7 +500,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/61e4d787a5af/" title="Python中浅拷贝和深拷贝的区别">
+                      <a href="/posts/blog002/" title="Python中浅拷贝和深拷贝的区别">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Python中浅拷贝和深拷贝的区别</span>
                         <span class="visible-mobile">上一篇</span>

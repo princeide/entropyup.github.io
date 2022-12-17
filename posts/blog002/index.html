@@ -18,17 +18,19 @@
   <meta name="author" content="王子豪">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. 写在前面这周在手写聚类算法的代码，在复制字典时遇到了浅拷贝和深拷贝的问题，这里总结记录一下。一般地，复制一个对象（在Python中，字典、列表都是常见的对象）有三种方法：赋值、浅拷贝和深拷贝，这三种复制方法具有不同的效果。 2. 赋值赋值操作只是把原对象的地址赋给了新的对象。因此，对原对象的任意修改都会使新的对象变化，看下面的例子： 12345a &#x3D; [1, 2, 3]b &#x3D; a  # 赋值">
+    <meta name="description" content="Python中复制常见数据结构（字典、列表等）时容易出现的错误及其背后原理浅析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python中浅拷贝和深拷贝的区别">
-<meta property="og:url" content="https://princehao.cn/posts/61e4d787a5af/index.html">
+<meta property="og:url" content="https://princehao.cn/posts/blog002/index.html">
 <meta property="og:site_name" content="Prince_hao">
-<meta property="og:description" content="1. 写在前面这周在手写聚类算法的代码，在复制字典时遇到了浅拷贝和深拷贝的问题，这里总结记录一下。一般地，复制一个对象（在Python中，字典、列表都是常见的对象）有三种方法：赋值、浅拷贝和深拷贝，这三种复制方法具有不同的效果。 2. 赋值赋值操作只是把原对象的地址赋给了新的对象。因此，对原对象的任意修改都会使新的对象变化，看下面的例子： 12345a &#x3D; [1, 2, 3]b &#x3D; a  # 赋值">
+<meta property="og:description" content="Python中复制常见数据结构（字典、列表等）时容易出现的错误及其背后原理浅析">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://princehao.cn/img/blog002/cover.jpg">
 <meta property="article:published_time" content="2022-12-16T09:33:34.000Z">
-<meta property="article:modified_time" content="2022-12-16T09:34:56.075Z">
+<meta property="article:modified_time" content="2022-12-17T10:14:45.966Z">
 <meta property="article:author" content="王子豪">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://princehao.cn/img/blog002/cover.jpg">
   
   
   
@@ -298,19 +300,19 @@
             
               <div class="markdown-body">
                 
-                <h1 id="1-写在前面"><a href="#1-写在前面" class="headerlink" title="1. 写在前面"></a>1. 写在前面</h1><p>这周在手写聚类算法的代码，在复制字典时遇到了浅拷贝和深拷贝的问题，这里总结记录一下。一般地，复制一个对象（在Python中，字典、列表都是常见的对象）有三种方法：<strong>赋值</strong>、<strong>浅拷贝</strong>和<strong>深拷贝</strong>，这三种复制方法具有不同的效果。</p>
-<h1 id="2-赋值"><a href="#2-赋值" class="headerlink" title="2. 赋值"></a>2. 赋值</h1><p>赋值操作只是把原对象的地址赋给了新的对象。因此，对原对象的任意修改都会使新的对象变化，看下面的例子：</p>
+                <p>这周在手写聚类算法的代码，在复制字典时遇到了浅拷贝和深拷贝的问题，这里总结记录一下。一般地，复制一个对象（在Python中，字典、列表都是常见的对象）有三种方法：<strong>赋值</strong>、<strong>浅拷贝</strong>和<strong>深拷贝</strong>，这三种复制方法具有不同的效果。</p>
+<h1 id="1-赋值"><a href="#1-赋值" class="headerlink" title="1. 赋值"></a>1. 赋值</h1><p>赋值操作只是把原对象的地址赋给了新的对象。因此，对原对象的任意修改都会使新的对象变化，看下面的例子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br>b = a  <span class="hljs-comment"># 赋值</span><br>a[<span class="hljs-number">0</span>] = <span class="hljs-number">2</span><br><span class="hljs-built_in">print</span>(a)  <span class="hljs-comment"># [2, 2, 3]</span><br><span class="hljs-built_in">print</span>(b)  <span class="hljs-comment"># [2, 2, 3]</span><br></code></pre></td></tr></table></figure>
-<h1 id="3-浅拷贝"><a href="#3-浅拷贝" class="headerlink" title="3. 浅拷贝"></a>3. 浅拷贝</h1><p>浅拷贝会将原列表内的每个元素的地址都复制到新列表中，我们在调用list()、dict()等方法做复制时，都是浅拷贝。若元素为值，则修改元素<strong>不会</strong>使新列表发生变化，看下面的例子：</p>
+<h1 id="2-浅拷贝"><a href="#2-浅拷贝" class="headerlink" title="2. 浅拷贝"></a>2. 浅拷贝</h1><p>浅拷贝会将原列表内的每个元素的地址都复制到新列表中，我们在调用list()、dict()等方法做复制时，都是浅拷贝。若元素为值，则修改元素<strong>不会</strong>使新列表发生变化，看下面的例子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br>b = <span class="hljs-built_in">list</span>(a)  <span class="hljs-comment"># 等效写法: b = a.copy()</span><br>a[<span class="hljs-number">0</span>] = <span class="hljs-number">2</span><br><span class="hljs-built_in">print</span>(a)  <span class="hljs-comment"># [2, 2, 3]</span><br><span class="hljs-built_in">print</span>(b)  <span class="hljs-comment"># [1, 2, 3]</span><br></code></pre></td></tr></table></figure>
 <p>但是，如果元素为对象（如列表），由于<strong>浅拷贝仅复制了对象的地址</strong>，因此修改&#x2F;增加对象类的元素将<strong>会使</strong>新列表发生变化，看下面的例子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">a = [[<span class="hljs-number">1</span>], <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br>b = <span class="hljs-built_in">list</span>(a)<br>a[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">2</span>  <span class="hljs-comment"># 修改元素: [1] -&gt; [2]</span><br>a[<span class="hljs-number">0</span>].append(<span class="hljs-number">3</span>)  <span class="hljs-comment"># 添加元素: 3</span><br><span class="hljs-built_in">print</span>(a)  <span class="hljs-comment"># [[2, 3], 2, 3]</span><br><span class="hljs-built_in">print</span>(b)  <span class="hljs-comment"># [[2, 3], 2, 3]</span><br></code></pre></td></tr></table></figure>
 <p>值得注意的是，删除&#x2F;替换对象类的元素<strong>不会使</strong>新列表发生变化，看下面的例子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">a = [[<span class="hljs-number">1</span>], <span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]<br>b = <span class="hljs-built_in">list</span>(a)<br>a[<span class="hljs-number">2</span>] = [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>]  <span class="hljs-comment"># 替换元素: [3,4] -&gt; [4,5]</span><br>a.pop(<span class="hljs-number">0</span>)  <span class="hljs-comment"># 删除元素: [1]</span><br><span class="hljs-built_in">print</span>(a)  <span class="hljs-comment"># [2, [4, 5]]</span><br><span class="hljs-built_in">print</span>(b)  <span class="hljs-comment"># [[1], 2, [3, 4]]</span><br></code></pre></td></tr></table></figure>
 <p>要想彻底解释清楚这个现象，读者可以搜索基本类型（即值）和引用类型（即列表、字典等）的<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44865458/article/details/116132034">区别</a>。通俗地说，修改&#x2F;增加是对子列表内的元素进行操作，浅拷贝下原对象和拷贝对象的子列表各元素地址是一样的，因此会跟着一起变化；而删除&#x2F;替换是对子列表本身进行操作，浅拷贝复制了子列表（头）的地址，原对象和拷贝对象的子列表在内存空间完全是两个东西，因此不会一起跟着一起变化。</p>
-<h1 id="4-深拷贝"><a href="#4-深拷贝" class="headerlink" title="4. 深拷贝"></a>4. 深拷贝</h1><p>深拷贝是真正意义上的“复制”，它不仅拷贝了对象的地址，还拷贝了对象的子对象的地址，对原对象做任意修改，都不会影响现对象。看下面的例子：</p>
+<h1 id="3-深拷贝"><a href="#3-深拷贝" class="headerlink" title="3. 深拷贝"></a>3. 深拷贝</h1><p>深拷贝是真正意义上的“复制”，它不仅拷贝了对象的地址，还拷贝了对象的子对象的地址，对原对象做任意修改，都不会影响现对象。看下面的例子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> copy<br>a = [[<span class="hljs-number">1</span>], <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br>b = copy.deepcopy(a)<br>a[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">2</span>  <span class="hljs-comment"># 修改1: 修改值</span><br>a[<span class="hljs-number">0</span>].append(<span class="hljs-number">3</span>)  <span class="hljs-comment"># 修改2: 添加元素</span><br><span class="hljs-built_in">print</span>(a)  <span class="hljs-comment"># [[2, 3], 2, 3]</span><br><span class="hljs-built_in">print</span>(b)  <span class="hljs-comment"># [[1], 2, 3]</span><br></code></pre></td></tr></table></figure>
-<h1 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h1><p>在对列表、字典等数据结构做复制操作时，要注意它们各元素的类型是基本类型（值）还是引用类型（字典、列表、元组等）。<strong>若均为值，则可以使用浅拷贝方法；若其中存在列表等引用类型且需要对其进行修改时，则应该使用深拷贝方法。</strong></p>
+<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h1><p>在对列表、字典等数据结构做复制操作时，要注意它们各元素的类型是基本类型（值）还是引用类型（字典、列表、元组等）。<strong>若均为值，则可以使用浅拷贝方法；若其中存在列表等引用类型且需要对其进行修改时，则应该使用深拷贝方法。</strong></p>
 
                 
               </div>
@@ -329,7 +331,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Python中浅拷贝和深拷贝的区别</div>
-      <div>https://princehao.cn/posts/61e4d787a5af/</div>
+      <div>https://princehao.cn/posts/blog002/</div>
     </div>
     <div class="license-meta">
       
@@ -375,8 +377,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/89f933a4bf19/" title="Hexo+Fluid搭建自己的个人博客网站！">
-                        <span class="hidden-mobile">Hexo+Fluid搭建自己的个人博客网站！</span>
+                      <a href="/posts/blog001/" title="Hexo+Fluid搭建个人博客网站">
+                        <span class="hidden-mobile">Hexo+Fluid搭建个人博客网站</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
