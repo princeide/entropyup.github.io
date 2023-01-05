@@ -18,23 +18,23 @@
   <meta name="author" content="王子豪">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Python中复制常见数据结构（字典、列表等）时容易出现的错误及其背后原理浅析">
+    <meta name="description" content="回忆一下2022年让自己印象深刻的大事">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python中浅拷贝和深拷贝的区别">
-<meta property="og:url" content="https://princehao.cn/posts/blog002/index.html">
+<meta property="og:title" content="2022年大事记">
+<meta property="og:url" content="https://princehao.cn/posts/blog003/index.html">
 <meta property="og:site_name" content="Prince_hao">
-<meta property="og:description" content="Python中复制常见数据结构（字典、列表等）时容易出现的错误及其背后原理浅析">
+<meta property="og:description" content="回忆一下2022年让自己印象深刻的大事">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://princehao.cn/img/blog002/cover.jpg">
-<meta property="article:published_time" content="2022-12-16T09:33:34.000Z">
-<meta property="article:modified_time" content="2022-12-17T10:14:45.966Z">
+<meta property="og:image" content="https://princehao.cn/img/blog003/cover.jpg">
+<meta property="article:published_time" content="2023-01-05T06:13:00.000Z">
+<meta property="article:modified_time" content="2023-01-05T06:14:14.944Z">
 <meta property="article:author" content="王子豪">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://princehao.cn/img/blog002/cover.jpg">
+<meta name="twitter:image" content="https://princehao.cn/img/blog003/cover.jpg">
   
   
   
-  <title>Python中浅拷贝和深拷贝的区别 - Prince_hao</title>
+  <title>2022年大事记 - Prince_hao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Python中浅拷贝和深拷贝的区别"></span>
+            <span id="subtitle" data-typed-text="2022年大事记"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-16 17:33" pubdate>
-          2022年12月16日 下午
+        <time datetime="2023-01-05 14:13" pubdate>
+          2023年1月5日 下午
         </time>
       </span>
     
@@ -245,7 +245,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.2k 字
+          2.1k 字
         
       </span>
     
@@ -257,7 +257,7 @@
         
         
           <!-- compatible with older versions-->
-          11 分钟
+          18 分钟
         
       </span>
     
@@ -295,24 +295,26 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Python中浅拷贝和深拷贝的区别</h1>
+            <h1 style="display: none">2022年大事记</h1>
             
             
               <div class="markdown-body">
                 
-                <p>这周在手写聚类算法的代码，在复制字典时遇到了浅拷贝和深拷贝的问题，这里总结记录一下。一般地，复制一个对象（在Python中，字典、列表都是常见的对象）有三种方法：<strong>赋值</strong>、<strong>浅拷贝</strong>和<strong>深拷贝</strong>，这三种复制方法具有不同的效果。</p>
-<h1 id="1-赋值"><a href="#1-赋值" class="headerlink" title="1. 赋值"></a>1. 赋值</h1><p>赋值操作只是把原对象的地址赋给了新的对象。因此，对原对象的任意修改都会使新的对象变化，看下面的例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br>b = a  <span class="hljs-comment"># 赋值</span><br>a[<span class="hljs-number">0</span>] = <span class="hljs-number">2</span><br><span class="hljs-built_in">print</span>(a)  <span class="hljs-comment"># [2, 2, 3]</span><br><span class="hljs-built_in">print</span>(b)  <span class="hljs-comment"># [2, 2, 3]</span><br></code></pre></td></tr></table></figure>
-<h1 id="2-浅拷贝"><a href="#2-浅拷贝" class="headerlink" title="2. 浅拷贝"></a>2. 浅拷贝</h1><p>浅拷贝会将原列表内的每个元素的地址都复制到新列表中，我们在调用list()、dict()等方法做复制时，都是浅拷贝。若元素为值，则修改元素<strong>不会</strong>使新列表发生变化，看下面的例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br>b = <span class="hljs-built_in">list</span>(a)  <span class="hljs-comment"># 等效写法: b = a.copy()</span><br>a[<span class="hljs-number">0</span>] = <span class="hljs-number">2</span><br><span class="hljs-built_in">print</span>(a)  <span class="hljs-comment"># [2, 2, 3]</span><br><span class="hljs-built_in">print</span>(b)  <span class="hljs-comment"># [1, 2, 3]</span><br></code></pre></td></tr></table></figure>
-<p>但是，如果元素为对象（如列表），由于<strong>浅拷贝仅复制了对象的地址</strong>，因此修改&#x2F;增加对象类的元素将<strong>会使</strong>新列表发生变化，看下面的例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">a = [[<span class="hljs-number">1</span>], <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br>b = <span class="hljs-built_in">list</span>(a)<br>a[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">2</span>  <span class="hljs-comment"># 修改元素: [1] -&gt; [2]</span><br>a[<span class="hljs-number">0</span>].append(<span class="hljs-number">3</span>)  <span class="hljs-comment"># 添加元素: 3</span><br><span class="hljs-built_in">print</span>(a)  <span class="hljs-comment"># [[2, 3], 2, 3]</span><br><span class="hljs-built_in">print</span>(b)  <span class="hljs-comment"># [[2, 3], 2, 3]</span><br></code></pre></td></tr></table></figure>
-<p>值得注意的是，删除&#x2F;替换对象类的元素<strong>不会使</strong>新列表发生变化，看下面的例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">a = [[<span class="hljs-number">1</span>], <span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]<br>b = <span class="hljs-built_in">list</span>(a)<br>a[<span class="hljs-number">2</span>] = [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>]  <span class="hljs-comment"># 替换元素: [3,4] -&gt; [4,5]</span><br>a.pop(<span class="hljs-number">0</span>)  <span class="hljs-comment"># 删除元素: [1]</span><br><span class="hljs-built_in">print</span>(a)  <span class="hljs-comment"># [2, [4, 5]]</span><br><span class="hljs-built_in">print</span>(b)  <span class="hljs-comment"># [[1], 2, [3, 4]]</span><br></code></pre></td></tr></table></figure>
-<p>要想彻底解释清楚这个现象，读者可以搜索基本类型（即值）和引用类型（即列表、字典等）的<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44865458/article/details/116132034">区别</a>。通俗地说，修改&#x2F;增加是对子列表内的元素进行操作，浅拷贝下原对象和拷贝对象的子列表各元素地址是一样的，因此会跟着一起变化；而删除&#x2F;替换是对子列表本身进行操作，浅拷贝复制了子列表（头）的地址，原对象和拷贝对象的子列表在内存空间完全是两个东西，因此不会一起跟着一起变化。</p>
-<h1 id="3-深拷贝"><a href="#3-深拷贝" class="headerlink" title="3. 深拷贝"></a>3. 深拷贝</h1><p>深拷贝是真正意义上的“复制”，它不仅拷贝了对象的地址，还拷贝了对象的子对象的地址，对原对象做任意修改，都不会影响现对象。看下面的例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> copy<br>a = [[<span class="hljs-number">1</span>], <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br>b = copy.deepcopy(a)<br>a[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">2</span>  <span class="hljs-comment"># 修改1: 修改值</span><br>a[<span class="hljs-number">0</span>].append(<span class="hljs-number">3</span>)  <span class="hljs-comment"># 修改2: 添加元素</span><br><span class="hljs-built_in">print</span>(a)  <span class="hljs-comment"># [[2, 3], 2, 3]</span><br><span class="hljs-built_in">print</span>(b)  <span class="hljs-comment"># [[1], 2, 3]</span><br></code></pre></td></tr></table></figure>
-<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h1><p>在对列表、字典等数据结构做复制操作时，要注意它们各元素的类型是基本类型（值）还是引用类型（字典、列表、元组等）。<strong>若均为值，则可以使用浅拷贝方法；若其中存在列表等引用类型且需要对其进行修改时，则应该使用深拷贝方法。</strong></p>
+                <p>在2021年年初时自己就曾计划随手记录一下身边发生的大事，做一个历史的“亲历者”和“记录者”。但由于懒惰等原因，竟然一下子拖了两年。新年新气象，2023年伊始，我想重新开始这项计划，从平淡的生活中寻找到属于自己的宝藏。今天是2023年1月5号，是刚开完组会的第二天，神清气爽，暂时忘却无尽的课题争执，回忆一下我印象深刻的2022年的大事：</p>
+<h3 id="1-2022年2月24日：俄乌冲突爆发"><a href="#1-2022年2月24日：俄乌冲突爆发" class="headerlink" title="1. 2022年2月24日：俄乌冲突爆发"></a>1. 2022年2月24日：俄乌冲突爆发</h3><p>莫斯科时间2月24日凌晨6时整（乌克兰时间5时整），俄罗斯总统普京宣布了一项以乌克兰非军事化和去纳粹化为目标，以及阻止乌克兰政府对本国人民实施种族灭绝的特殊军事行动。2月-5月的时间线整理可见<a target="_blank" rel="noopener" href="https://www.zwbk2009.com/index.php?title=2022%E5%B9%B4%E4%BF%84%E4%B9%8C%E6%88%98%E4%BA%89%E8%BF%87%E7%A8%8B%EF%BC%88%E6%97%B6%E9%97%B4%E8%A1%A8%EF%BC%89">这里</a>。这是我自记事起第一次亲身见证一场“现代战争”的爆发。对于战争的正义性等，不同立场的人有截然不同的看法，国内互联网也为此争执不休。如今已经来到2023年，冲突仍在持续，结局如何尚未知晓。</p>
+<h3 id="2-2022年3月21日：东航MU5735空难"><a href="#2-2022年3月21日：东航MU5735空难" class="headerlink" title="2. 2022年3月21日：东航MU5735空难"></a>2. 2022年3月21日：东航MU5735空难</h3><p>2022年3月21日，东方航空云南有限公司波音737-800型B-1791号机，执行MU5735昆明至广州航班，在广州管制区域巡航时，自航路巡航高度8900米快速下降，最终坠毁在广西壮族自治区梧州市藤县埌南镇莫埌村附近。飞机撞地后解体，机上123名旅客、9名机组成员全部遇难。截止目前，尚未有官方告知失事的原因。<br>我平时很怕坐飞机，因为感觉飞到天上以后自己再也无法掌控生死，很难想象失事前飞机上的人员的心情，希望以后这样的悲剧不要再发生。</p>
+<h3 id="3-2022年7月8日：安倍遇刺身亡"><a href="#3-2022年7月8日：安倍遇刺身亡" class="headerlink" title="3. 2022年7月8日：安倍遇刺身亡"></a>3. 2022年7月8日：安倍遇刺身亡</h3><p>当地时间2022年7月8日11时30分左右，日本前首相安倍晋三在奈良市街头发表演讲时遭枪击倒地，17时03分，安倍晋三因伤势过重不治身亡，终年67岁。</p>
+<h3 id="4-2022年8月2日：佩洛西窜访台湾"><a href="#4-2022年8月2日：佩洛西窜访台湾" class="headerlink" title="4. 2022年8月2日：佩洛西窜访台湾"></a>4. 2022年8月2日：佩洛西窜访台湾</h3><p>2022年7月，有报道称佩洛西将于八月访台，但没有官方的声明究竟来或不来，在7月28日的官方行程中并未包括台湾。直到8月2号晚八点过，佩洛西的飞机经印尼转向，绕过中国南海。8月2日22时43分左右，美国众议院议长佩洛西专机降落台北松山机场。22点54分左右，佩洛西走下专机，随后共计窜访台湾20个小时左右。之后，中国解放军在台湾周边展开了长时间、一系列的军事演习。<br>当时的场景我印象深刻，我在和兄弟吃饭，边吃边看佩洛西专机的行程直播，这种心情至今难忘。</p>
+<h3 id="5-2022年9月26日：北溪管道爆炸"><a href="#5-2022年9月26日：北溪管道爆炸" class="headerlink" title="5. 2022年9月26日：北溪管道爆炸"></a>5. 2022年9月26日：北溪管道爆炸</h3><p>9月26日，俄罗斯向欧洲输送天然气的“北溪-1”和“北溪-2”海底管道发生爆炸，导致大量天然气泄漏。各方普遍怀疑泄漏为“蓄意破坏”所致。</p>
+<h3 id="6-2022年11月20日：卡塔尔世界杯"><a href="#6-2022年11月20日：卡塔尔世界杯" class="headerlink" title="6. 2022年11月20日：卡塔尔世界杯"></a>6. 2022年11月20日：卡塔尔世界杯</h3><p>2022年11月20日至12月18日，在卡塔尔举行第22届国际足联世界杯。我不看球，但是作为一个吃瓜人，见证了很多爆冷，比如：韩国2:1葡萄牙，摩洛哥2:0比利时。最后恭喜阿根廷，恭喜梅西，足球界的OG大魔王！</p>
+<h3 id="7-2022年11月25日：吴亦凡被判13年"><a href="#7-2022年11月25日：吴亦凡被判13年" class="headerlink" title="7. 2022年11月25日：吴亦凡被判13年"></a>7. 2022年11月25日：吴亦凡被判13年</h3><p>2022年11月25日上午，北京市朝阳区人民法院一审公开宣判被告人吴亦凡强奸、聚众淫乱案，对被告人吴亦凡以强奸罪判处有期徒刑十一年六个月，附加驱逐出境；以聚众淫乱罪判处有期徒刑一年十个月，数罪并罚，决定执行有期徒刑十三年，附加驱逐出境。该事件起始于2021年7月都美竹在微博爆料吴亦凡，如今终于有了定棺盖论。事件来龙去脉可见<a target="_blank" rel="noopener" href="https://3g.163.com/dy/article/HN1MF6J50552O25P.html">这里</a>。</p>
+<h3 id="8-2022-11-30：江泽民同志去世"><a href="#8-2022-11-30：江泽民同志去世" class="headerlink" title="8. 2022.11.30：江泽民同志去世"></a>8. 2022.11.30：江泽民同志去世</h3><p>江泽民同志患白血病合并多脏器功能衰竭，抢救无效，于2022年11月30日12时13分在上海逝世，享年96岁。这应该是我们95后第一次在互联网时代经历前国家领导人的去世。长者于我有特殊回忆，随着年龄的增长，我对他的敬佩之情越来越深。除了卓越的领导才能，长者同时也是半个能源同行，早在2008年，他就在上海交通大学学报上发表《对中国能源问题的思考》一文，从10多年来中国能源行业的发展来看，预测准确，展现了他对能源行业的深刻见解和敏锐洞悉。不仅如此，作为工科学子，他没有工科学生的“呆板”和“无聊”，精通演唱、乐器、乒乓球等，运动、艺术天赋极佳。他的去世，象征着一个的时代结束。<br>2022年，两位和他同时代（即诞生于上世纪20年代或30年代初）的其他国家最高领导人（包括实际和名义最高领导人）也去世了：</p>
+<ul>
+<li>2022年8月30日（俄罗斯当地时间）：苏联末任领导人<strong>戈尔巴乔夫</strong>去世，出生于1931年3月2日，终年91岁</li>
+<li>2022年9月8日（英国当地时间）：英国女王<strong>伊丽莎白二世</strong>去世，出生于1926年2月2日，享年96岁</li>
+</ul>
+<p> 截止2023年1月5日，决赛圈中仍然健在的同时代其他国家领导人可见<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/552517829/answer/2666057041">这篇知乎回答</a>。</p>
+<h3 id="9-2022年12月13日：杭州市健康码退出历史舞台"><a href="#9-2022年12月13日：杭州市健康码退出历史舞台" class="headerlink" title="9. 2022年12月13日：杭州市健康码退出历史舞台"></a>9. 2022年12月13日：杭州市健康码退出历史舞台</h3><p>12月7日，国务院联防联控机制综合组发布《关于进一步优化落实新冠肺炎疫情防控措施的通知》（简称<strong>优化落实疫情防控新十条</strong>）。一星期内，杭州市逐步放开群体核酸检测、行程卡查验、健康码审查。12月13日，杭州市内乘坐公共交通、进出公共场所等无需出示健康码，健康码退出历史舞台。从2020年初疫情爆发，到阿里紧急开发健康码辅助新冠溯源，健康码似乎跟随我两年有余，这次又见证了历史。</p>
 
                 
               </div>
@@ -330,8 +332,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Python中浅拷贝和深拷贝的区别</div>
-      <div>https://princehao.cn/posts/blog002/</div>
+      <div>2022年大事记</div>
+      <div>https://princehao.cn/posts/blog003/</div>
     </div>
     <div class="license-meta">
       
@@ -343,7 +345,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月16日</div>
+          <div>2023年1月5日</div>
         </div>
       
       
@@ -373,18 +375,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/blog003/" title="2022年大事记">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022年大事记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/blog001/" title="Hexo+Fluid搭建个人博客网站">
-                        <span class="hidden-mobile">Hexo+Fluid搭建个人博客网站</span>
+                      <a href="/posts/blog002/" title="Python中浅拷贝和深拷贝的区别">
+                        <span class="hidden-mobile">Python中浅拷贝和深拷贝的区别</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
