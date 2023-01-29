@@ -18,23 +18,23 @@
   <meta name="author" content="王子豪">
   <meta name="keywords" content="">
   
-    <meta name="description" content="分享一下常用的DOS命令，以及在工科领域DOS命令最为常用的一个场景：自动化仿真">
+    <meta name="description" content="手把手把当前人工智能最火热的产品ChatGPT放在你的桌面上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows DOS命令和批处理脚本">
-<meta property="og:url" content="https://princehao.cn/posts/blog004/index.html">
+<meta property="og:title" content="桌面版ChatGPT客户端初尝试">
+<meta property="og:url" content="https://princehao.cn/posts/blog005/index.html">
 <meta property="og:site_name" content="Prince_hao">
-<meta property="og:description" content="分享一下常用的DOS命令，以及在工科领域DOS命令最为常用的一个场景：自动化仿真">
+<meta property="og:description" content="手把手把当前人工智能最火热的产品ChatGPT放在你的桌面上">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://princehao.cn/img/blog004/cover.jpg">
-<meta property="article:published_time" content="2023-01-19T03:11:11.000Z">
-<meta property="article:modified_time" content="2023-01-19T03:40:41.824Z">
+<meta property="og:image" content="https://princehao.cn/img/blog005/cover.png">
+<meta property="article:published_time" content="2023-01-29T08:52:30.000Z">
+<meta property="article:modified_time" content="2023-01-29T08:58:02.276Z">
 <meta property="article:author" content="王子豪">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://princehao.cn/img/blog004/cover.jpg">
+<meta name="twitter:image" content="https://princehao.cn/img/blog005/cover.png">
   
   
   
-  <title>Windows DOS命令和批处理脚本 - Prince_hao</title>
+  <title>桌面版ChatGPT客户端初尝试 - Prince_hao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Windows DOS命令和批处理脚本"></span>
+            <span id="subtitle" data-typed-text="桌面版ChatGPT客户端初尝试"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-19 11:11" pubdate>
-          2023年1月19日 上午
+        <time datetime="2023-01-29 16:52" pubdate>
+          2023年1月29日 下午
         </time>
       </span>
     
@@ -245,7 +245,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.5k 字
+          1.1k 字
         
       </span>
     
@@ -257,7 +257,7 @@
         
         
           <!-- compatible with older versions-->
-          7 分钟
+          5 分钟
         
       </span>
     
@@ -295,24 +295,36 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Windows DOS命令和批处理脚本</h1>
+            <h1 style="display: none">桌面版ChatGPT客户端初尝试</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="1. 基本命令"></a>1. 基本命令</h1><h2 id="1-1-文件操作"><a href="#1-1-文件操作" class="headerlink" title="1.1 文件操作"></a>1.1 文件操作</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 查看当前路径下的所有文件夹和文件（文件夹内的文件不会显示）</span><br><span class="hljs-built_in">dir</span><br><span class="hljs-comment"># 打开文件夹</span><br><span class="hljs-comment"># !!Tab可以智能补充文件名字，非常好用</span><br><span class="hljs-built_in">cd</span> test<br><span class="hljs-comment"># 以下为操作文件夹</span><br><span class="hljs-comment"># 创建文件夹</span><br>mkdir test<br><span class="hljs-built_in">md</span> test<br><span class="hljs-comment"># 重命名文件夹</span><br><span class="hljs-built_in">ren</span> test test1<br><span class="hljs-comment"># 将文件夹a中的文件复制到b文件夹（相对路径或绝对路径）</span><br><span class="hljs-built_in">copy</span> a b<br><span class="hljs-comment"># 删除文件夹</span><br><span class="hljs-built_in">rmdir</span> test<br><span class="hljs-built_in">rd</span> test<br><span class="hljs-comment"># 以下为操作文件</span><br><span class="hljs-comment"># 删除文件</span><br><span class="hljs-built_in">del</span> test.txt<br><span class="hljs-comment"># 重命名文件</span><br><span class="hljs-built_in">move</span> test.txt test1.txt<br><span class="hljs-comment"># 移动文件</span><br><span class="hljs-built_in">move</span> c:\test.txt d:\test.txt<br></code></pre></td></tr></table></figure>
-
-<h2 id="1-2-基本运算"><a href="#1-2-基本运算" class="headerlink" title="1.2 基本运算"></a>1.2 基本运算</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 设置变量</span><br><span class="hljs-built_in">set</span> a=<span class="hljs-number">10</span><br><span class="hljs-comment"># 代数运算</span><br><span class="hljs-built_in">set</span> /a b=%a%+<span class="hljs-number">2</span><br><span class="hljs-built_in">set</span> /a b=%a%/<span class="hljs-number">2</span><br><span class="hljs-comment"># 重定向运算</span><br><span class="hljs-comment"># 覆盖文件原始文本</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello world&quot;</span> &gt; a.txt<br><span class="hljs-comment"># 在文件末尾追加文本</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello world&quot;</span> &gt;&gt; a.txt<br><span class="hljs-comment"># 多命令运算</span><br><span class="hljs-comment"># 与操作，只要前面有命令错误，后续就不执行</span><br>ipconfig &amp;&amp; net user<br><span class="hljs-comment"># 或操作，只要前面有命令正确，后续就不执行</span><br>ipconfig || net user<br><span class="hljs-comment"># 管道运算，将前者的输出作为后者的输入</span><br><span class="hljs-built_in">dir</span> | find <span class="hljs-string">&quot;*.txt&quot;</span>  <span class="hljs-comment"># 找到当前路径下所有的txt文件</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="1-3-批处理程序常用命令"><a href="#1-3-批处理程序常用命令" class="headerlink" title="1.3 批处理程序常用命令"></a>1.3 批处理程序常用命令</h2><p>批处理程序是windows自带的脚本，可以在 <code>cmd</code> 和 <code>powershell</code> 中直接运行，文件后缀为.bat，主要命令包括：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 不输出描述（一般加在开头）</span><br><span class="hljs-selector-tag">@</span> <span class="hljs-built_in">echo</span> off<br><span class="hljs-comment"># 执行完脚本后结束（一般加在结尾）</span><br>pause<br><span class="hljs-comment"># 输出</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello world&quot;</span><br><span class="hljs-comment"># 传参: %1</span><br><span class="hljs-comment"># test.bat: echo %1</span><br>test.bat <span class="hljs-string">&quot;hello world&quot;</span><br><span class="hljs-comment"># 调用其他脚本</span><br>call test2.bat<br></code></pre></td></tr></table></figure>
-
-<h2 id="1-4-其他常用命令"><a href="#1-4-其他常用命令" class="headerlink" title="1.4 其他常用命令"></a>1.4 其他常用命令</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># cmd中的注释和powershell并不相同</span><br>rem <span class="hljs-string">&quot;这是注释&quot;</span><br>:: <span class="hljs-string">&quot;这是注释&quot;</span><br><span class="hljs-comment"># 清屏</span><br><span class="hljs-built_in">cls</span><br><span class="hljs-comment"># 打开某可执行文件</span><br>d:\matlab.exe<br><span class="hljs-comment"># 用某可执行文件打开某文件</span><br>d:\matlab.exe d:\test.m<br><span class="hljs-comment"># 文件树状图</span><br>tree<br><span class="hljs-comment"># 循环文件夹</span><br><span class="hljs-keyword">for</span> /d %%a <span class="hljs-keyword">in</span> (*) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> %%a  <span class="hljs-comment"># 打印当前目录所有文件夹</span><br><span class="hljs-keyword">for</span> /d %%a <span class="hljs-keyword">in</span> (*) <span class="hljs-keyword">if</span> %%a==test <span class="hljs-built_in">rd</span> %%a  <span class="hljs-comment"># 遍历文件夹，如有名为test的则删除</span><br><span class="hljs-comment"># 循环文件</span><br><span class="hljs-keyword">for</span> /<span class="hljs-built_in">r</span> <span class="hljs-string">&quot;d:\matlab&quot;</span> %%a <span class="hljs-keyword">in</span> (*.m) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> %%a  <span class="hljs-comment"># 打印d:\matlab文件夹下所有m文件</span><br></code></pre></td></tr></table></figure>
-
-<h1 id="2-用DOS命令实现自动化仿真"><a href="#2-用DOS命令实现自动化仿真" class="headerlink" title="2. 用DOS命令实现自动化仿真"></a>2. 用DOS命令实现自动化仿真</h1><p>作为工科学生，我们很多时候需要对仿真软件设置大量不同的参数组合来获得多组不同的结果，当组合数爆炸时，这个工作量会十分巨大，反复摧残我们的心灵。这时，采用DOS命令来实现自动化仿真将大幅降低我们的工作量。其基本工作原理如下：<br><img src="/img/blog004/outline.png" srcset="/img/loading.gif" lazyload></p>
-<p>第一步中，主流编程语言（Python、Matlab等）都能够直接调用dos命令。例如Python中的 <code>os.system()</code> ，Matlab中的 <code>dos()</code> 等。</p>
-<p>第二步中，“跑”仿真的过程，本质上是将仿真模型编译为一个特定格式的文件，通过仿真软件读取这个文件进行计算，因此只需要用仿真软件（.exe）将仿真模型文件打开即可。</p>
-<p>第三步中，仿真软件一般都具有和其他编程语言的接口，能够将仿真结果通过接口传入编程语言，进行后续处理。</p>
+                <p>ChatGPT火了已经有一段时间了，从生成诗词到给出试卷中的答案，它的出现确实给了人类一些小小的人工智能震撼。不过官网的界面并不十分友好，今天简单介绍一个桌面版的ChatGPT客户端，它具有非常友好的交互界面，还具有很多非常实用的功能，大大提升了使用效率。</p>
+<h1 id="1-注册OpenAI账号"><a href="#1-注册OpenAI账号" class="headerlink" title="1. 注册OpenAI账号"></a>1. 注册OpenAI账号</h1><p>使用ChatGPT的基本功能是免费的，但是需要注册一个OpenAI的账号进行登录。由于众所周知的原因，OpenAI并不对中国（包括中国香港）开放，用国内的手机号注册会出现如下错误：</p>
+<blockquote>
+<p>OpenAI’s services are not available in your country</p>
+</blockquote>
+<p>因此，需要采用科学上网+国外手机号的方法实现注册。有很多教程可供参考：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/589956094">1. 能让你玩上一天的 openAI ChatGPT 注册详细教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2190154">2. 一文教你快速注册OpenAi（ChatGPT），国内也可以！</a></p>
+<p>自己在实践时，出现了大大小小的问题，以下几点经验分享一下：</p>
+<ul>
+<li>推荐采用谷歌的<strong>gmail邮箱</strong>进行注册，qq邮箱等可能会出现问题；</li>
+<li>科学上网的接入点，<strong>不能选择香港！</strong>推荐日本、韩国等；</li>
+<li>选择手机所在的地区，需要和科学上网的接入点<strong>保持一致</strong>；</li>
+<li>建议使用<strong>无痕模式</strong>访问网页；</li>
+<li>当注册失败出现上面不提供服务的错误时，清除<strong>浏览器缓存、cookie</strong>（谷歌浏览器的快捷键是<code>ctrl+shift+del</code>）并重新尝试。</li>
+</ul>
+<p>当完成注册后，就可以通过OpenAI账号进入到ChatGPT的官网页面。到这一步，ChatGPT的功能就已经能够正常使用了。</p>
+<h1 id="2-使用客户端登录ChatGPT"><a href="#2-使用客户端登录ChatGPT" class="headerlink" title="2. 使用客户端登录ChatGPT"></a>2. 使用客户端登录ChatGPT</h1><p>该客户端为Github上的开源软件，地址为：<a target="_blank" rel="noopener" href="https://github.com/lencx/ChatGPT%EF%BC%8C%E5%90%8C%E6%97%B6%E6%94%AF%E6%8C%81">https://github.com/lencx/ChatGPT，同时支持</a> Mac、Windows和Linux。官方提供了安装包，可以直接进行下载安装。其界面和ChatGPT官网一样，输入账号后就可以进行登录，一劳永逸（注意：每次使用都需要开启科学上网）。客户端界面如下所示：</p>
+<p><img src="/img/blog005/interface.png" srcset="/img/loading.gif" lazyload></p>
+<p>这个客户端有两个非常方便的功能：</p>
+<h2 id="2-1-导出答案"><a href="#2-1-导出答案" class="headerlink" title="2.1 导出答案"></a>2.1 导出答案</h2><p>在生成答案后，客户端中允许将这些答案以<code>markdown</code>、<code>png</code>和<code>pdf</code>格式输出，这样免去了我们复制粘贴的麻烦，如下所示：</p>
+<p><img src="/img/blog005/print.png" srcset="/img/loading.gif" lazyload alt="print"></p>
+<h2 id="2-2-快捷命令"><a href="#2-2-快捷命令" class="headerlink" title="2.2 快捷命令"></a>2.2 快捷命令</h2><p>在对话框中输入 <code>/</code> 就可以激活快捷命令，其本质上是一种预设的文本，能够提高使用效率。可以在<code>Preferences-Control Center-Language Model-User Custom</code>中对快捷命令进行预定义，如下所示：</p>
+<p><img src="/img/blog005/cmd.png" srcset="/img/loading.gif" lazyload></p>
+<p>其中， <code>/&#123;cmd&#125;</code> 是我们使用快捷命令的指令，<code>Act</code> 是对命令的描述，<code>Prompt</code> 是预设的文本。具体教程可以见<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2205477">这里</a>。</p>
 
                 
               </div>
@@ -330,8 +342,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Windows DOS命令和批处理脚本</div>
-      <div>https://princehao.cn/posts/blog004/</div>
+      <div>桌面版ChatGPT客户端初尝试</div>
+      <div>https://princehao.cn/posts/blog005/</div>
     </div>
     <div class="license-meta">
       
@@ -343,7 +355,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年1月19日</div>
+          <div>2023年1月29日</div>
         </div>
       
       
@@ -373,18 +385,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/blog005/" title="桌面版ChatGPT客户端初尝试">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">桌面版ChatGPT客户端初尝试</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/blog003/" title="2022年大事记">
-                        <span class="hidden-mobile">2022年大事记</span>
+                      <a href="/posts/blog004/" title="Windows DOS命令和批处理脚本">
+                        <span class="hidden-mobile">Windows DOS命令和批处理脚本</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
