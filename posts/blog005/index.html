@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://princehao.cn/img/blog005/cover.jpg">
 <meta property="article:published_time" content="2023-05-08T14:34:26.000Z">
-<meta property="article:modified_time" content="2023-05-08T14:46:58.457Z">
+<meta property="article:modified_time" content="2023-05-12T08:04:17.468Z">
 <meta property="article:author" content="王子豪">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://princehao.cn/img/blog005/cover.jpg">
@@ -312,7 +312,7 @@
 </ul>
 <p>变量和不同数据类型在计算机内存中的存储位置如下图所示：</p>
 <p><img src="/img/blog005/memory.png" srcset="/img/loading.gif" lazyload></p>
-<p>在Python中，所有变量都保存在栈内存中，而所有不同数据类型的数据（每个数据都是一个对象）都保存在堆内存中。这与Java等语言差异较大（关于Java的分析，可见博文《Java值传递和引用传递分析》，<strong>强烈建议先看完Java的内存分析再看本文</strong>）。</p>
+<p>在Python中，所有变量都保存在栈内存中，而所有不同数据类型的数据（每个数据都是一个对象）都保存在堆内存中。这与Java等语言是有较大差异的。</p>
 <h1 id="2-变量赋值"><a href="#2-变量赋值" class="headerlink" title="2. 变量赋值"></a>2. 变量赋值</h1><h2 id="2-1-不可变对象的赋值"><a href="#2-1-不可变对象的赋值" class="headerlink" title="2.1 不可变对象的赋值"></a>2.1 不可变对象的赋值</h2><p>看以下代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">a = <span class="hljs-number">1</span>  <span class="hljs-comment"># Number</span><br>b = a<br>c = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)  <span class="hljs-comment"># Tuple</span><br>d = c<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(a), <span class="hljs-built_in">id</span>(b))  <span class="hljs-comment"># 结果1：id相同</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(c), <span class="hljs-built_in">id</span>(d))  <span class="hljs-comment"># 结果2：id相同</span><br>a = a + <span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(a), <span class="hljs-built_in">id</span>(b))  <span class="hljs-comment"># 结果3：id不相同(a=2, b=1)</span><br>e = <span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(a), <span class="hljs-built_in">id</span>(b), <span class="hljs-built_in">id</span>(e))  <span class="hljs-comment"># 结果4：id均相同</span><br></code></pre></td></tr></table></figure>
 
