@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://princehao.cn/img/blog001/cover.jpg">
 <meta property="article:published_time" content="2022-12-15T14:10:09.000Z">
-<meta property="article:modified_time" content="2023-02-03T02:20:21.608Z">
+<meta property="article:modified_time" content="2024-07-03T09:15:17.582Z">
 <meta property="article:author" content="王子豪">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://princehao.cn/img/blog001/cover.jpg">
@@ -246,7 +246,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          7.2k 字
+          7.9k 字
         
       </span>
     
@@ -258,7 +258,7 @@
         
         
           <!-- compatible with older versions-->
-          30 分钟
+          33 分钟
         
       </span>
     
@@ -301,7 +301,7 @@
             
               <div class="markdown-body">
                 
-                <p>这篇博文我已经拖更半年了，半年前兴致勃勃地买了域名、搭起了个人博客，结果到现在网页上还是空空如也，马上就要2023年了，准备从现在开始，每天坚持做一件事，希望时间的积分效应能让我有所收益。<br>本博文将介绍如何从零开始一步一步搭建出属于自己的个人博客网站，使用的框架为Hexo+Fluid。在写作时主要参考了以下博文，在此对这些作者表示由衷的感谢：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904131266609165">(1) 彻底搞懂如何使用Hexo+GitHubPages搭建个人微博</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249/">(2) GitHub+Hexo 搭建个人网站详细教程</a><br>本文会持续更新，最近一次更新时间：2023年02月03日</p>
+                <p>这篇博文我已经拖更半年了，半年前兴致勃勃地买了域名、搭起了个人博客，结果到现在网页上还是空空如也，马上就要2023年了，准备从现在开始，每天坚持做一件事，希望时间的积分效应能让我有所收益。<br>本博文将介绍如何从零开始一步一步搭建出属于自己的个人博客网站，使用的框架为Hexo+Fluid。在写作时主要参考了以下博文，在此对这些作者表示由衷的感谢：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904131266609165">(1) 彻底搞懂如何使用Hexo+GitHubPages搭建个人微博</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249/">(2) GitHub+Hexo 搭建个人网站详细教程</a><br>本文会持续更新，最近一次更新时间：2024年07月03日</p>
 <h1 id="1-配置GitHubPages"><a href="#1-配置GitHubPages" class="headerlink" title="1. 配置GitHubPages"></a>1. 配置GitHubPages</h1><p>简单来说，GitHubPages的作用是提供免费的静态网站托管服务，我们只需要把自己写的html文档保存在其仓库中，该服务就会对这些文件进行处理并展示为网页的样式，即近似实现了<strong>Web服务器</strong>的功能，创建GitHubPages需要在GitHub上完成（注册GitHub账号以及配置SSH公钥可见<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458">这篇博文</a>），具体步骤为：<br>(1) 点击GitHub首页右上角的“+”按钮，在弹出窗口选择“New respository”；<br>(2) 在新页面中的“Repository name”一栏输入<strong>你GitHub的用户名</strong>。注意：必须输入用户名，否则创建的将不是GitHubPages而是一个普通的仓库；<br>(3) 勾选“Initialize this repository with a README”选项，并点击“Create Respository”按钮。<br>此时在浏览器输入https:&#x2F;&#x2F;你GitHub的用户名.github.io后，已经可以看到一个简陋的界面，这就说明你已经成功开启GithubPages服务了。</p>
 <h1 id="2-安装Hexo并初始化博客"><a href="#2-安装Hexo并初始化博客" class="headerlink" title="2. 安装Hexo并初始化博客"></a>2. 安装Hexo并初始化博客</h1><p>Hexo是一个快速且简洁的博客框架，用户可以通过Hexo快速生成一个完整的博客页面。Hexo使用Node.js来对页面进行快速渲染，因此需要同时安装Node.js和Hexo：</p>
 <h2 id="2-1-安装Node-js"><a href="#2-1-安装Node-js" class="headerlink" title="2.1 安装Node.js"></a>2.1 安装Node.js</h2><p>可在<a target="_blank" rel="noopener" href="https://nodejs.org/en/">官网</a>直接安装Node.js，建议使用Node.js 10.0及以上版本。可以在cmd中输入以下命令检查自己是否安装成功：</p>
@@ -458,7 +458,20 @@
 
 <p>通过以上步骤，就成功添加了一个live2d看板娘。作者建议针对自己的网页对看板娘的位置、大小、文本等信息进行自定义。其中，在<code>waifu.css</code>中可以修改看板娘位置等信息，在<code>waifu-tips.json</code>中可以修改看板娘对话（强烈建议自己修改对话，一些对话少儿不宜）。设置说明可见<a target="_blank" rel="noopener" href="https://www.cnblogs.com/c10udlnk/p/14727173.html">这篇博文</a>（对css语法要求较高）。</p>
 <h1 id="8-配置sitemap"><a href="#8-配置sitemap" class="headerlink" title="8. 配置sitemap"></a>8. 配置sitemap</h1><p>虽然你的网站已经成功部署，但是实际上它还是和“单机版”一样，这是因为你博客的任何内容都<strong>没有被搜索引擎收录</strong>，其他用户在搜索相关内容时，搜索引擎是不会显示你的内容的。想要自己的博客被搜索引擎收录，你需要<strong>配置各大搜索引擎的sitemap</strong>。我自己尝试配置了谷歌和百度的sitemap，但是一直没有成功。以下资料可供大家参考：<br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1946996">(1) Hexo-生成sitemap站点地图</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3ae41ef36b43">(2) Hexo 博客添加百度sitemap以及进行SEO优化</a></p>
-<h1 id="9-结语"><a href="#9-结语" class="headerlink" title="9. 结语"></a>9. 结语</h1><p>以上就是基于Hexo+Fluid的个人博客系统搭建与使用的完整教程了。从第七步中我们可以看出来，如果你的目的是想要博文被大家看到，那么个人博客系统远远不如一些主流的平台，如微信、知乎、掘金等。但是从零搭建起只属于自己的网站还是非常有成就感的，祝大家都能找到人生的意义所在。</p>
+<h1 id="9-博客迁移到新电脑"><a href="#9-博客迁移到新电脑" class="headerlink" title="9. 博客迁移到新电脑"></a>9. 博客迁移到新电脑</h1><p>因为换电脑需要将博客迁移至新电脑时，可以按照如下步骤实现快速迁移：</p>
+<p>（1）在新电脑中安装git和Node.js，安装过程见第二部分，在此不作赘述；</p>
+<p>（2）打开git bash，分别运行如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs git">git config --global user.name &quot;你的名字&quot;<br>git config --global user.email &quot;你的邮箱&quot;<br>ssh-keygen -t rsa -C &quot;你的邮箱&quot;<br></code></pre></td></tr></table></figure>
+
+<p>在用户目录的.ssh文件夹下打开id_rsa.pub的公钥，复制所有信息，并在自己的github账号中的Settings -&gt; SSH and GPG keys中点击New SSH key，Title输入框随便填，Key输入框粘贴刚才的信息。</p>
+<p>（3）把旧电脑的博客文件夹复制到新电脑的任意位置，删除掉node_modules文件夹（其他的文件可以不用动，会自动覆盖掉）。用cmd打开新电脑中该文件夹的位置，运行如下代码：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install<br></code></pre></td></tr></table></figure>
+
+<p>注意，不要用 <code>hexo init</code> 进行初始化，否则会将配置文件初始化。</p>
+<p>（4）依次运行 <code>hexo g</code> 和 <code>hexo s</code> 进行本地测试，最后运行 <code>hexo d</code> 进行部署。注意：在执行部署时，可能会出现如下警告，只需要输入yes即可。</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vbnet">The authenticity <span class="hljs-keyword">of</span> host <span class="hljs-comment">&#x27;github.com&#x27; can&#x27;t be established.</span><br>This <span class="hljs-keyword">key</span> <span class="hljs-built_in">is</span> <span class="hljs-built_in">not</span> known <span class="hljs-keyword">by</span> any other names.<br>Are you sure you want <span class="hljs-keyword">to</span> <span class="hljs-keyword">continue</span> connecting (yes/no/[fingerprint])?<br></code></pre></td></tr></table></figure>
+
+<h1 id="10-结语"><a href="#10-结语" class="headerlink" title="10. 结语"></a>10. 结语</h1><p>以上就是基于Hexo+Fluid的个人博客系统搭建与使用的完整教程了。从第七步中我们可以看出来，如果你的目的是想要博文被大家看到，那么个人博客系统远远不如一些主流的平台，如微信、知乎、掘金等。但是从零搭建起只属于自己的网站还是非常有成就感的，祝大家都能找到人生的意义所在。</p>
 
                 
               </div>
