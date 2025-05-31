@@ -18,24 +18,24 @@
   <meta name="author" content="王子豪">
   <meta name="keywords" content="">
   
-    <meta name="description" content="分享一下常用的DOS命令，以及在工科领域DOS命令最为常用的一个场景：自动化仿真">
+    <meta name="description" content="按照国家顺序梳理春秋战国时期各国的兴衰史">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows DOS命令和批处理脚本">
-<meta property="og:url" content="https://princehao.cn/posts/blog003/index.html">
+<meta property="og:title" content="春秋战国历史">
+<meta property="og:url" content="https://princehao.cn/posts/blog009/index.html">
 <meta property="og:site_name" content="Prince_hao">
-<meta property="og:description" content="分享一下常用的DOS命令，以及在工科领域DOS命令最为常用的一个场景：自动化仿真">
+<meta property="og:description" content="按照国家顺序梳理春秋战国时期各国的兴衰史">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://princehao.cn/img/blog/blog003/cover.jpg">
-<meta property="article:published_time" content="2023-01-19T03:11:11.000Z">
-<meta property="article:modified_time" content="2025-05-31T07:08:53.913Z">
+<meta property="og:image" content="https://princehao.cn/img/blog/blog009/cover.png">
+<meta property="article:published_time" content="2025-05-27T02:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-31T07:31:09.093Z">
 <meta property="article:author" content="王子豪">
-<meta property="article:tag" content="cmd操作">
+<meta property="article:tag" content="春秋战国">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://princehao.cn/img/blog/blog003/cover.jpg">
+<meta name="twitter:image" content="https://princehao.cn/img/blog/blog009/cover.png">
   
   
   
-  <title>Windows DOS命令和批处理脚本 - Prince_hao</title>
+  <title>春秋战国历史 - Prince_hao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Windows DOS命令和批处理脚本"></span>
+            <span id="subtitle" data-typed-text="春秋战国历史"></span>
           
         </div>
 
@@ -234,8 +234,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-19 11:11" pubdate>
-          2023年1月19日 上午
+        <time datetime="2025-05-27 10:00" pubdate>
+          2025年5月27日 上午
         </time>
       </span>
     
@@ -247,7 +247,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.5k 字
+          3.8k 字
         
       </span>
     
@@ -259,7 +259,7 @@
         
         
           <!-- compatible with older versions-->
-          7 分钟
+          16 分钟
         
       </span>
     
@@ -297,24 +297,74 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Windows DOS命令和批处理脚本</h1>
+            <h1 style="display: none">春秋战国历史</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="1. 基本命令"></a>1. 基本命令</h1><h2 id="1-1-文件操作"><a href="#1-1-文件操作" class="headerlink" title="1.1 文件操作"></a>1.1 文件操作</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 查看当前路径下的所有文件夹和文件（文件夹内的文件不会显示）</span><br><span class="hljs-built_in">dir</span><br><span class="hljs-comment"># 打开文件夹</span><br><span class="hljs-comment"># !!Tab可以智能补充文件名字，非常好用</span><br><span class="hljs-built_in">cd</span> test<br><span class="hljs-comment"># 以下为操作文件夹</span><br><span class="hljs-comment"># 创建文件夹</span><br>mkdir test<br><span class="hljs-built_in">md</span> test<br><span class="hljs-comment"># 重命名文件夹</span><br><span class="hljs-built_in">ren</span> test test1<br><span class="hljs-comment"># 将文件夹a中的文件复制到b文件夹（相对路径或绝对路径）</span><br><span class="hljs-built_in">copy</span> a b<br><span class="hljs-comment"># 删除文件夹</span><br><span class="hljs-built_in">rmdir</span> test<br><span class="hljs-built_in">rd</span> test<br><span class="hljs-comment"># 以下为操作文件</span><br><span class="hljs-comment"># 删除文件</span><br><span class="hljs-built_in">del</span> test.txt<br><span class="hljs-comment"># 重命名文件</span><br><span class="hljs-built_in">move</span> test.txt test1.txt<br><span class="hljs-comment"># 移动文件</span><br><span class="hljs-built_in">move</span> c:\test.txt d:\test.txt<br></code></pre></td></tr></table></figure>
-
-<h2 id="1-2-基本运算"><a href="#1-2-基本运算" class="headerlink" title="1.2 基本运算"></a>1.2 基本运算</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 设置变量</span><br><span class="hljs-built_in">set</span> a=<span class="hljs-number">10</span><br><span class="hljs-comment"># 代数运算</span><br><span class="hljs-built_in">set</span> /a b=%a%+<span class="hljs-number">2</span><br><span class="hljs-built_in">set</span> /a b=%a%/<span class="hljs-number">2</span><br><span class="hljs-comment"># 重定向运算</span><br><span class="hljs-comment"># 覆盖文件原始文本</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello world&quot;</span> &gt; a.txt<br><span class="hljs-comment"># 在文件末尾追加文本</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello world&quot;</span> &gt;&gt; a.txt<br><span class="hljs-comment"># 多命令运算</span><br><span class="hljs-comment"># 与操作，只要前面有命令错误，后续就不执行</span><br>ipconfig &amp;&amp; net user<br><span class="hljs-comment"># 或操作，只要前面有命令正确，后续就不执行</span><br>ipconfig || net user<br><span class="hljs-comment"># 管道运算，将前者的输出作为后者的输入</span><br><span class="hljs-built_in">dir</span> | find <span class="hljs-string">&quot;*.txt&quot;</span>  <span class="hljs-comment"># 找到当前路径下所有的txt文件</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="1-3-批处理程序常用命令"><a href="#1-3-批处理程序常用命令" class="headerlink" title="1.3 批处理程序常用命令"></a>1.3 批处理程序常用命令</h2><p>批处理程序是windows自带的脚本，可以在 <code>cmd</code> 和 <code>powershell</code> 中直接运行，文件后缀为.bat，主要命令包括：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 不输出描述（一般加在开头）</span><br><span class="hljs-selector-tag">@</span> <span class="hljs-built_in">echo</span> off<br><span class="hljs-comment"># 执行完脚本后结束（一般加在结尾）</span><br>pause<br><span class="hljs-comment"># 输出</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello world&quot;</span><br><span class="hljs-comment"># 传参: %1</span><br><span class="hljs-comment"># test.bat: echo %1</span><br>test.bat <span class="hljs-string">&quot;hello world&quot;</span><br><span class="hljs-comment"># 调用其他脚本</span><br>call test2.bat<br></code></pre></td></tr></table></figure>
-
-<h2 id="1-4-其他常用命令"><a href="#1-4-其他常用命令" class="headerlink" title="1.4 其他常用命令"></a>1.4 其他常用命令</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># cmd中的注释和powershell并不相同</span><br>rem <span class="hljs-string">&quot;这是注释&quot;</span><br>:: <span class="hljs-string">&quot;这是注释&quot;</span><br><span class="hljs-comment"># 清屏</span><br><span class="hljs-built_in">cls</span><br><span class="hljs-comment"># 打开某可执行文件</span><br>d:\matlab.exe<br><span class="hljs-comment"># 用某可执行文件打开某文件</span><br>d:\matlab.exe d:\test.m<br><span class="hljs-comment"># 文件树状图</span><br>tree<br><span class="hljs-comment"># 循环文件夹</span><br><span class="hljs-keyword">for</span> /d %%a <span class="hljs-keyword">in</span> (*) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> %%a  <span class="hljs-comment"># 打印当前目录所有文件夹</span><br><span class="hljs-keyword">for</span> /d %%a <span class="hljs-keyword">in</span> (*) <span class="hljs-keyword">if</span> %%a==test <span class="hljs-built_in">rd</span> %%a  <span class="hljs-comment"># 遍历文件夹，如有名为test的则删除</span><br><span class="hljs-comment"># 循环文件</span><br><span class="hljs-keyword">for</span> /<span class="hljs-built_in">r</span> <span class="hljs-string">&quot;d:\matlab&quot;</span> %%a <span class="hljs-keyword">in</span> (*.m) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> %%a  <span class="hljs-comment"># 打印d:\matlab文件夹下所有m文件</span><br></code></pre></td></tr></table></figure>
-
-<h1 id="2-用DOS命令实现自动化仿真"><a href="#2-用DOS命令实现自动化仿真" class="headerlink" title="2. 用DOS命令实现自动化仿真"></a>2. 用DOS命令实现自动化仿真</h1><p>作为工科学生，我们很多时候需要对仿真软件设置大量不同的参数组合来获得多组不同的结果，当组合数爆炸时，这个工作量会十分巨大，反复摧残我们的心灵。这时，采用DOS命令来实现自动化仿真将大幅降低我们的工作量。其基本工作原理如下：<br><img src="/img/blog/blog003/outline.png" srcset="/img/loading.gif" lazyload></p>
-<p>第一步中，主流编程语言（Python、Matlab等）都能够直接调用dos命令。例如Python中的 <code>os.system()</code> ，Matlab中的 <code>dos()</code> 等。</p>
-<p>第二步中，“跑”仿真的过程，本质上是将仿真模型编译为一个特定格式的文件，通过仿真软件读取这个文件进行计算，因此只需要用仿真软件（.exe）将仿真模型文件打开即可。</p>
-<p>第三步中，仿真软件一般都具有和其他编程语言的接口，能够将仿真结果通过接口传入编程语言，进行后续处理。</p>
+                <p>参考资料：</p>
+<blockquote>
+<p>bilibili-《春秋战国全史》-王山水读通鉴</p>
+</blockquote>
+<h3 id="1-总述"><a href="#1-总述" class="headerlink" title="1. 总述"></a>1. 总述</h3><p>总体发展趋势：</p>
+<ul>
+<li>用人：宗亲（周朝以前，家天下） -&gt; 贵族（春秋） -&gt; 士人（战国）</li>
+<li>战略：做天下共主，讲究大义 -&gt; 一统天下，讲究兵不厌诈</li>
+<li>春秋五霸：齐桓公 -&gt; 晋文公 -&gt; 楚庄王 -&gt; 版本一：宋襄公 -&gt; 秦穆公（-&gt; 版本二：吴王阖闾 -&gt; 越王勾践）                                 </li>
+<li>生产力：青铜器 -&gt; 铁器</li>
+</ul>
+<h3 id="2-齐国"><a href="#2-齐国" class="headerlink" title="2. 齐国"></a>2. 齐国</h3><p>建立：姜太公（姜姓），定都淄博</p>
+<p>齐襄公自小与妹妹相爱，妹妹嫁给鲁国国君后两人私通并杀了鲁国君主。之后自己也被谋杀。</p>
+<p>齐襄公弟弟-齐桓公小白，公元前685年成为齐国君主，任用管仲（一箭之仇、管鲍之交、如获至宝、老马识途）。在位开启货币战、盐铁战，使齐国成为春秋强国。在位时曾攻打鲁国，首战因曹刿论战而失败。提出尊王攘夷，遵循周礼。公元前656年召陵之盟，确定春秋霸主地位。齐桓公最后因儿子争大位被饿死，之后齐国衰落。</p>
+<p>齐庄公时期，因给崔杼戴绿帽而被崔杼杀死（崔杼弑君，史官气节）。</p>
+<p>齐景公时期，晏婴辅佐，国力再次强大。期间田氏壮大，齐景公死后，逐渐架空姜氏，公元前379年田氏代齐。</p>
+<p>齐威王时期，仿效魏文侯变法，重用士人迅速强大，如邹忌、田忌、孙膑。期间，发生围魏救赵故事、马陵之战，孙膑战胜庞涓。公元前334年，魏惠王和齐威王在徐州会盟，承认对方称王身份。在位期间，齐国国力强大。</p>
+<p>齐宣王时期，孟子在齐国，有许多典故：缘木求鱼、恻隐之心、顾左右而言他等。后因燕国内乱攻打燕国而烧杀抢掠，燕国人民激愤，苏秦作为燕昭王的卧底前往齐国报仇，期间佩六国相印。</p>
+<p>齐敏王时期，苏秦献计与秦国国君共同称王然后反悔，惹得其他国家众怒被讨伐，最后逃亡被杀。随后一直消沉被灭亡。</p>
+<h3 id="3-晋国"><a href="#3-晋国" class="headerlink" title="3. 晋国"></a>3. 晋国</h3><p>建立：西周时周王之弟分封至晋（均无戏言），后春秋早期曲沃代翼，小宗取代大宗。因此晋国有提防近亲的传统，贵族势力强大。</p>
+<p>晋献公时期，吞并和打服诸多小国，包括虢国和虞国（唇亡齿寒、假途灭虢），位于崤函谷道出口，阻挡秦国出关。废长立幼，逼死太子，两个弟弟重耳（晋文公）和夷吾（晋惠公）出逃。</p>
+<p>晋惠公先逃回来做国君，在位期间不得人心。死后重耳回国夺得大位（61岁），称晋文公。</p>
+<p>晋文公时期，齐桓公已死，齐国衰落，而楚国楚成王正兴盛。大将子玉攻打宋国，晋文公为报流亡期间宋襄公恩情，攻打曹国魏国以救宋国。晋楚大战时，齐桓公退避三舍以报楚成王恩情，最终在城濮开战。晋文公兵不厌诈，采用战略进行非“义战”，最终获胜，确定春秋霸主地位。在位8年，建立了六卿制，促进了人才发展，使晋国持续强大，但同时为三家分晋留下隐患。</p>
+<p>六卿：赵、魏、韩、智、范、中行。范氏、中行氏被灭后，智氏（智伯瑶）一家独大。强行裹挟魏韩攻打赵国，采用水攻淹晋阳，被韩魏反攻灭亡。公元前403年，赵魏韩得到周天子册封，三家分晋，战国开始。</p>
+<h3 id="4-楚国"><a href="#4-楚国" class="headerlink" title="4. 楚国"></a>4. 楚国</h3><p>建立：熊绎，非周天子嫡系，定都南阳。天性不服周天子</p>
+<p>楚武王时期，要求周天子将自己从子爵升为侯被周桓王拒绝，怒而称王。在位期间攻打了多个小国，儿子为楚文王，也积极展开战争。</p>
+<p>楚成王时期，被齐桓公率领的联军攻打而服软，参加召陵之盟承诺向周天子朝贡称臣，同时并入中原体系，参与春秋争霸。</p>
+<p>楚庄王时期，楚国称霸。公元前597年，邲之战大胜晋国，问鼎中原。</p>
+<p>楚平王时期，杀伍子胥之父，逃至吴国。十年后，吴王阖闾率伍子胥和孙武攻占楚国全部领土（楚昭王），几近灭国。</p>
+<p>楚惠王时期，励精图治，恢复楚国生气。</p>
+<p>楚悼王时期，吴起从魏国投奔楚国进行变法。公元前383年战胜魏国，重回一流大国序列。但是楚国的变法是最不彻底的，权力仍然垄断在宗亲手中，而吴王对宗亲的掌控较弱。</p>
+<p>楚怀王时期，魏国衰落齐国再次强大，秦国张仪前往楚国游说反齐并承诺给予600里地，后被背刺说只给6里地。发动丹阳之战失败，后又发动蓝田之战几近打到咸阳而后失败，遂修好。在外交上，在各国之间唯利是图、毫无诚信。后被四国联军攻打被迫求和。之后在会盟中被秦国扣押直至死去。</p>
+<p>公元前223年，楚国灭亡。</p>
+<h3 id="5-吴越"><a href="#5-吴越" class="headerlink" title="5. 吴越"></a>5. 吴越</h3><p>建立：吴-&gt;江苏一带，越-&gt;浙江一带</p>
+<p>公元前515年，公子光派出刺客，鱼藏剑刺杀现任吴王上位，即吴王阖闾。率领吴国攻打楚国（伍子胥、孙武）获大胜，其弟夫概在其中大放异彩，后被越国偷袭只能班师回朝。夫概先行回国自立为王，被阖闾打败。随后吴国主要与越国进行多次战争，阖闾也在一次战争中被射中脚感染而亡。</p>
+<p>阖闾之后为吴王夫差，打败越国，越王勾践卧薪尝胆。伍子胥认为不能接受越王投降，与夫差产生意见分歧。艾陵之战中战胜齐国，之后伍子胥被嘲讽愤而自杀。公元前482年与诸国会盟（主要是晋国）期间，被越王勾践偷家。前473年，吴国灭亡。次年，越国与秦晋等国会盟，确认霸主地位。勾践死后，越国在史料上基本消失，仍然奉行春秋时期的分封制。公元前306年，越国被楚国灭亡。</p>
+<h3 id="6-魏国"><a href="#6-魏国" class="headerlink" title="6. 魏国"></a>6. 魏国</h3><p>建立：公元前453年，三家分晋。因占据了部分智氏土地（东边），因此土地东西各一块。前403年，周天子正式承认赵魏韩三国诸侯地位。</p>
+<p>魏文侯时期，重用士人，任用李悝进行变法，魏国首先强大起来。任用吴起大胜秦国，在河西地区、函谷关站稳脚步，封秦国于关内。</p>
+<p>魏武侯时期，展开两线作战。但期间三晋联盟几近崩溃，尤其是与赵国的战略目标过于相近，矛盾激烈。虽然胜多败少，但是没有得到很大实惠，且魏武侯德行差，大量魏国人才出逃，如吴起逃往楚国。</p>
+<p>魏惠王时期，迁都大梁（近开封）。公元前341年，魏国攻打韩国，齐国出兵救韩，马陵之战大胜魏国，元气大伤，同时赵国、秦国等趁火打劫。</p>
+<p>魏国战略位置差、历任国君战略失误，后逐渐沦为小国。公元前225年，被秦国灭亡。</p>
+<h3 id="7-赵国"><a href="#7-赵国" class="headerlink" title="7. 赵国"></a>7. 赵国</h3><p>建国伊始，赵国意取南方中原，被魏国阻挡，输多胜少。</p>
+<p>赵武灵王时期，派兵护送秦昭襄王从燕国回到秦国继位，秦赵建立联盟与齐魏相持。之后攻打北面中山国，采用胡服骑射政策，训练骑兵、吸纳游牧民族，最终成功吞并中山国以及西边阴山以南、河套等地区。采用从北向南的战略攻打秦国，并亲自冒充使臣打探地形。后提前退位让小儿子上位，并且让两个儿子分治，矛盾激化，引起沙丘之变，最后被饿死。</p>
+<p>赵惠文王时期，知人善任，包括廉颇、蔺相如、赵奢等。军事、外交上都非常有作为。</p>
+<p>赵孝成王时期，秦国攻打韩国将其土地截断，上党郡守欲将土地送给赵国以驱虎吞狼，赵孝成王不顾反对仍然接受了这一地区，爆发长平之战。被打败，签订协议割让六座城池，但赵孝成王不遵守约定，秦昭襄王大怒，再次发兵打到邯郸。危急时刻，信陵君窃符救赵，率领魏军、楚军迎战秦国，成功保卫邯郸。</p>
+<p>赵悼襄王时期，将攻打燕国的廉颇撤职，逃亡魏国避难，后被郭开阻挠没有再返回赵国。在位期间立娼女为后，并立其子赵幽缪王为太子。</p>
+<p>赵幽缪王时期，由李牧组织长城军团抵御秦军，秦军开战无果后收买郭开撤李牧兵权并被杀死。公元前228年，邯郸沦陷，赵幽缪王之兄逃亡北方自立为代王，于222年被秦国灭，赵国亡。</p>
+<h3 id="8-燕国"><a href="#8-燕国" class="headerlink" title="8. 燕国"></a>8. 燕国</h3><p>燕国为姬姓诸侯国，在春秋、战国早期史料记载甚少。</p>
+<p>公元前320年，燕王哙上位。其思想仍停留在春秋争霸、以德服人的阶段，将大位禅让给相，太子造反，齐国趁机攻占燕国。后惹众怒而退兵，燕国复国。</p>
+<p>其后燕昭王由赵武灵王派兵护送上位。燕昭王广纳贤才，如郭隗、乐毅等，乐毅变法强国。苏秦受燕昭王恩惠，前往齐国进行离间，使齐国将其他国尽数得罪。五国联军共同攻打齐国，乐毅占领齐大多数土地，燕昭王十分相信乐毅，君臣和谐。在位期间，燕昭王打败东胡，使中国疆域首次扩展至东北。</p>
+<p>燕惠王上台后，怀疑乐毅谋反，将其撤职。后齐国田丹采用火牛阵打败燕军，收复全部国土。</p>
+<p>公元前255年，燕王喜上位。看准赵国空虚进攻赵国，反被廉颇打败。其子太子丹派荆轲刺秦。前226年，被秦国攻城，逃往辽东。燕王喜杀太子丹求和，无果。公元前222年，燕国灭亡。</p>
+<h3 id="9-韩国"><a href="#9-韩国" class="headerlink" title="9. 韩国"></a>9. 韩国</h3><p>韩国建国后，大多时候都跟着其他国家，如一开始跟着魏国。</p>
+<p>公元前363年，韩昭侯继位。任用申不害进行变法，用“术”统御人民，国力有所提升。前230年，被秦国所灭。</p>
+<h3 id="10-秦国"><a href="#10-秦国" class="headerlink" title="10. 秦国"></a>10. 秦国</h3><p>建立：西周时期，秦国先祖是为周王室养马的，分了一块地，许多年后被升为大夫。平王东迁时秦襄公护驾有功，才被封为诸侯。秦国在建国之初，“分封制”的包袱最轻，为后续的彻底变法奠定思想基础。</p>
+<p>公元前660年，秦穆公继位。励精图治，重用百里奚、蹇叔。护送晋惠公上位（随后故事见晋国历史）。韩原之战大胜晋国，后与晋国之间发生诸多战争。秦穆公死后奉行陪葬传统，导致人才不敢到秦国，陷入200多年的平庸期。</p>
+<p>战国初期，河西地区被魏国吴起打败占领。随后，秦惠公趁魏楚交战时攻占河西地区，被吴起魏武卒打败。</p>
+<p>秦献公时期，恢复国力、废除殉葬制、几次战胜魏国（魏惠王时期）。</p>
+<p>秦孝公时期，重用商鞅变法，建立军功制度使秦国战力猛增。之后，趁魏国与齐楚交战进行夹击，成功收复河西地区。</p>
+<p>秦惠文王时期，商鞅被杀，任用张仪，开启合纵连横时代。</p>
+<p>秦武王时期，连年开战，向周天子借鼎而在举鼎时被鼎砸死。</p>
+<p>秦昭襄王时期（秦武王弟），宣太后首先掌权，后成功夺权。范雎和白起献策远交近攻，先后大胜魏韩联军、楚军、魏赵联军，长平之战又战胜赵国。</p>
+<p>秦孝文王在位三天死，而后秦庄襄王继位，在位三年。随后，秦王嬴政继位，时年12岁。国相吕不韦执政，继续执行远交近攻战略（奋六氏之余烈）。随后，毒杀嫪毐、罢免吕不韦亲政。先后灭亡韩、赵、燕、魏、楚、齐，公元前221年，天下一统。</p>
 
                 
               </div>
@@ -333,12 +383,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/" class="category-chain-item">编程开发</a>
+  <a href="/categories/%E8%AF%BB%E4%B9%A6%E5%AD%A6%E4%B9%A0/" class="category-chain-item">读书学习</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="category-chain-item">编程语言</a>
+  <a href="/categories/%E8%AF%BB%E4%B9%A6%E5%AD%A6%E4%B9%A0/%E4%B8%AD%E5%A4%96%E5%8E%86%E5%8F%B2/" class="category-chain-item">中外历史</a>
   
   
 
@@ -355,7 +405,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/cmd%E6%93%8D%E4%BD%9C/">#cmd操作</a>
+        <a href="/tags/%E6%98%A5%E7%A7%8B%E6%88%98%E5%9B%BD/">#春秋战国</a>
       
     </div>
   
@@ -367,8 +417,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Windows DOS命令和批处理脚本</div>
-      <div>https://princehao.cn/posts/blog003/</div>
+      <div>春秋战国历史</div>
+      <div>https://princehao.cn/posts/blog009/</div>
     </div>
     <div class="license-meta">
       
@@ -380,7 +430,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年1月19日</div>
+          <div>2025年5月27日</div>
         </div>
       
       
@@ -410,9 +460,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/blog004/" title="桌面版ChatGPT客户端初尝试">
+                      <a href="/posts/blog010/" title="Habitica：一款开源的任务管理工具">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">桌面版ChatGPT客户端初尝试</span>
+                        <span class="hidden-mobile">Habitica：一款开源的任务管理工具</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -420,8 +470,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/blog002/" title="2022年大事记">
-                        <span class="hidden-mobile">2022年大事记</span>
+                      <a href="/posts/blog008/" title="随笔·其一：爷爷人生中的最后一个五月">
+                        <span class="hidden-mobile">随笔·其一：爷爷人生中的最后一个五月</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

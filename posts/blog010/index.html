@@ -18,24 +18,25 @@
   <meta name="author" content="王子豪">
   <meta name="keywords" content="">
   
-    <meta name="description" content="分享一下常用的DOS命令，以及在工科领域DOS命令最为常用的一个场景：自动化仿真">
+    <meta name="description" content="介绍一款完全免费、多端同步且趣味性强的开源任务管理工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows DOS命令和批处理脚本">
-<meta property="og:url" content="https://princehao.cn/posts/blog003/index.html">
+<meta property="og:title" content="Habitica：一款开源的任务管理工具">
+<meta property="og:url" content="https://princehao.cn/posts/blog010/index.html">
 <meta property="og:site_name" content="Prince_hao">
-<meta property="og:description" content="分享一下常用的DOS命令，以及在工科领域DOS命令最为常用的一个场景：自动化仿真">
+<meta property="og:description" content="介绍一款完全免费、多端同步且趣味性强的开源任务管理工具">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://princehao.cn/img/blog/blog003/cover.jpg">
-<meta property="article:published_time" content="2023-01-19T03:11:11.000Z">
-<meta property="article:modified_time" content="2025-05-31T07:08:53.913Z">
+<meta property="og:image" content="https://princehao.cn/img/blog/blog010/cover.png">
+<meta property="article:published_time" content="2025-05-30T02:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-31T07:51:06.828Z">
 <meta property="article:author" content="王子豪">
-<meta property="article:tag" content="cmd操作">
+<meta property="article:tag" content="任务管理">
+<meta property="article:tag" content="开源工具">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://princehao.cn/img/blog/blog003/cover.jpg">
+<meta name="twitter:image" content="https://princehao.cn/img/blog/blog010/cover.png">
   
   
   
-  <title>Windows DOS命令和批处理脚本 - Prince_hao</title>
+  <title>Habitica：一款开源的任务管理工具 - Prince_hao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Windows DOS命令和批处理脚本"></span>
+            <span id="subtitle" data-typed-text="Habitica：一款开源的任务管理工具"></span>
           
         </div>
 
@@ -234,8 +235,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-19 11:11" pubdate>
-          2023年1月19日 上午
+        <time datetime="2025-05-30 10:00" pubdate>
+          2025年5月30日 上午
         </time>
       </span>
     
@@ -247,7 +248,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.5k 字
+          1.8k 字
         
       </span>
     
@@ -259,7 +260,7 @@
         
         
           <!-- compatible with older versions-->
-          7 分钟
+          8 分钟
         
       </span>
     
@@ -297,24 +298,32 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Windows DOS命令和批处理脚本</h1>
+            <h1 style="display: none">Habitica：一款开源的任务管理工具</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="1. 基本命令"></a>1. 基本命令</h1><h2 id="1-1-文件操作"><a href="#1-1-文件操作" class="headerlink" title="1.1 文件操作"></a>1.1 文件操作</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 查看当前路径下的所有文件夹和文件（文件夹内的文件不会显示）</span><br><span class="hljs-built_in">dir</span><br><span class="hljs-comment"># 打开文件夹</span><br><span class="hljs-comment"># !!Tab可以智能补充文件名字，非常好用</span><br><span class="hljs-built_in">cd</span> test<br><span class="hljs-comment"># 以下为操作文件夹</span><br><span class="hljs-comment"># 创建文件夹</span><br>mkdir test<br><span class="hljs-built_in">md</span> test<br><span class="hljs-comment"># 重命名文件夹</span><br><span class="hljs-built_in">ren</span> test test1<br><span class="hljs-comment"># 将文件夹a中的文件复制到b文件夹（相对路径或绝对路径）</span><br><span class="hljs-built_in">copy</span> a b<br><span class="hljs-comment"># 删除文件夹</span><br><span class="hljs-built_in">rmdir</span> test<br><span class="hljs-built_in">rd</span> test<br><span class="hljs-comment"># 以下为操作文件</span><br><span class="hljs-comment"># 删除文件</span><br><span class="hljs-built_in">del</span> test.txt<br><span class="hljs-comment"># 重命名文件</span><br><span class="hljs-built_in">move</span> test.txt test1.txt<br><span class="hljs-comment"># 移动文件</span><br><span class="hljs-built_in">move</span> c:\test.txt d:\test.txt<br></code></pre></td></tr></table></figure>
-
-<h2 id="1-2-基本运算"><a href="#1-2-基本运算" class="headerlink" title="1.2 基本运算"></a>1.2 基本运算</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 设置变量</span><br><span class="hljs-built_in">set</span> a=<span class="hljs-number">10</span><br><span class="hljs-comment"># 代数运算</span><br><span class="hljs-built_in">set</span> /a b=%a%+<span class="hljs-number">2</span><br><span class="hljs-built_in">set</span> /a b=%a%/<span class="hljs-number">2</span><br><span class="hljs-comment"># 重定向运算</span><br><span class="hljs-comment"># 覆盖文件原始文本</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello world&quot;</span> &gt; a.txt<br><span class="hljs-comment"># 在文件末尾追加文本</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello world&quot;</span> &gt;&gt; a.txt<br><span class="hljs-comment"># 多命令运算</span><br><span class="hljs-comment"># 与操作，只要前面有命令错误，后续就不执行</span><br>ipconfig &amp;&amp; net user<br><span class="hljs-comment"># 或操作，只要前面有命令正确，后续就不执行</span><br>ipconfig || net user<br><span class="hljs-comment"># 管道运算，将前者的输出作为后者的输入</span><br><span class="hljs-built_in">dir</span> | find <span class="hljs-string">&quot;*.txt&quot;</span>  <span class="hljs-comment"># 找到当前路径下所有的txt文件</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="1-3-批处理程序常用命令"><a href="#1-3-批处理程序常用命令" class="headerlink" title="1.3 批处理程序常用命令"></a>1.3 批处理程序常用命令</h2><p>批处理程序是windows自带的脚本，可以在 <code>cmd</code> 和 <code>powershell</code> 中直接运行，文件后缀为.bat，主要命令包括：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 不输出描述（一般加在开头）</span><br><span class="hljs-selector-tag">@</span> <span class="hljs-built_in">echo</span> off<br><span class="hljs-comment"># 执行完脚本后结束（一般加在结尾）</span><br>pause<br><span class="hljs-comment"># 输出</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello world&quot;</span><br><span class="hljs-comment"># 传参: %1</span><br><span class="hljs-comment"># test.bat: echo %1</span><br>test.bat <span class="hljs-string">&quot;hello world&quot;</span><br><span class="hljs-comment"># 调用其他脚本</span><br>call test2.bat<br></code></pre></td></tr></table></figure>
-
-<h2 id="1-4-其他常用命令"><a href="#1-4-其他常用命令" class="headerlink" title="1.4 其他常用命令"></a>1.4 其他常用命令</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># cmd中的注释和powershell并不相同</span><br>rem <span class="hljs-string">&quot;这是注释&quot;</span><br>:: <span class="hljs-string">&quot;这是注释&quot;</span><br><span class="hljs-comment"># 清屏</span><br><span class="hljs-built_in">cls</span><br><span class="hljs-comment"># 打开某可执行文件</span><br>d:\matlab.exe<br><span class="hljs-comment"># 用某可执行文件打开某文件</span><br>d:\matlab.exe d:\test.m<br><span class="hljs-comment"># 文件树状图</span><br>tree<br><span class="hljs-comment"># 循环文件夹</span><br><span class="hljs-keyword">for</span> /d %%a <span class="hljs-keyword">in</span> (*) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> %%a  <span class="hljs-comment"># 打印当前目录所有文件夹</span><br><span class="hljs-keyword">for</span> /d %%a <span class="hljs-keyword">in</span> (*) <span class="hljs-keyword">if</span> %%a==test <span class="hljs-built_in">rd</span> %%a  <span class="hljs-comment"># 遍历文件夹，如有名为test的则删除</span><br><span class="hljs-comment"># 循环文件</span><br><span class="hljs-keyword">for</span> /<span class="hljs-built_in">r</span> <span class="hljs-string">&quot;d:\matlab&quot;</span> %%a <span class="hljs-keyword">in</span> (*.m) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> %%a  <span class="hljs-comment"># 打印d:\matlab文件夹下所有m文件</span><br></code></pre></td></tr></table></figure>
-
-<h1 id="2-用DOS命令实现自动化仿真"><a href="#2-用DOS命令实现自动化仿真" class="headerlink" title="2. 用DOS命令实现自动化仿真"></a>2. 用DOS命令实现自动化仿真</h1><p>作为工科学生，我们很多时候需要对仿真软件设置大量不同的参数组合来获得多组不同的结果，当组合数爆炸时，这个工作量会十分巨大，反复摧残我们的心灵。这时，采用DOS命令来实现自动化仿真将大幅降低我们的工作量。其基本工作原理如下：<br><img src="/img/blog/blog003/outline.png" srcset="/img/loading.gif" lazyload></p>
-<p>第一步中，主流编程语言（Python、Matlab等）都能够直接调用dos命令。例如Python中的 <code>os.system()</code> ，Matlab中的 <code>dos()</code> 等。</p>
-<p>第二步中，“跑”仿真的过程，本质上是将仿真模型编译为一个特定格式的文件，通过仿真软件读取这个文件进行计算，因此只需要用仿真软件（.exe）将仿真模型文件打开即可。</p>
-<p>第三步中，仿真软件一般都具有和其他编程语言的接口，能够将仿真结果通过接口传入编程语言，进行后续处理。</p>
+                <h3 id="0-前言"><a href="#0-前言" class="headerlink" title="0. 前言"></a>0. 前言</h3><p>作为一个典型的infj，一个趁手的任务管理工具于我而言至关重要。自读博以来，尝试过用记事本、word这样原汁原味的管理工具，也用过滴答清单这样专业的管理工具，但是总感觉差点意思。对我来说，一个理想的任务管理工具应该具有以下特性：</p>
+<ul>
+<li>能够实现多端云同步，电脑、手机都可以用</li>
+<li>任务管理界面简洁不复杂，学习成本低</li>
+<li>具有一定的趣味性，能让我坚持使用</li>
+</ul>
+<p>前段时间在逛Github排行榜时，发现了一款开源的任务管理项目——<a target="_blank" rel="noopener" href="https://github.com/HabitRPG/habitica">Habitica</a>。目前已经使用了小半个月，其设计非常适合我的使用需求，这篇博文简单分享一下。</p>
+<h3 id="1-项目简介"><a href="#1-项目简介" class="headerlink" title="1. 项目简介"></a>1. 项目简介</h3><p>根据官网介绍，该项目采用RPG游戏闯关的方式来助力你实现任务管理。任务分为习惯、日常任务和待办事项三类，足够囊括日常生活中所需处理的不同任务类型。你的形象是RPG游戏中的像素小人，通过完成任务获取经验、金币，购买装备、打败BOSS，看着自己的小人日渐强大，提升完成任务的动力。同时，该项目支持多端协同，电脑端可以通过网址直接登录，IOS和安卓端均有对应的APP，能够同步你的任务进度。此外，目前所有基本功能都是免费的，付费的是RPG里的一些特殊装备，不影响正常使用。</p>
+<h3 id="2-任务管理功能"><a href="#2-任务管理功能" class="headerlink" title="2. 任务管理功能"></a>2. 任务管理功能</h3><p>任务管理是该项目的核心功能，界面如下：</p>
+<p><img src="/img/blog/blog010/interface.png" srcset="/img/loading.gif" lazyload alt="PC端任务管理界面"></p>
+<p>整体界面还是比较清爽的。界面从左到右依次为习惯、日常任务和待办事项：</p>
+<ul>
+<li>习惯：习惯在点击后不会消失，用于记录一段时间内某项任务的总体执行情况。习惯分为好习惯与坏习惯，可以将某个习惯同时设置为好习惯和坏习惯，点击加号则正计数器+1，点击减号则负计数器-1，计数器每日&#x2F;每周&#x2F;每月自动重置（自行设置）。个人感觉习惯的适用场景比较少，目前我使用频率较低。官方给出的使用示例：背单词15分钟、冥想15分钟等，但是都可以采用日常任务替代。</li>
+<li>日常任务：顾名思义，日常任务每天都会重复刷新让你完成，是助力你养成习惯的重要任务类型。可以自行设置每周重复的次数，每次完成后计数器会+1。个人使用频率非常高，比如每日身体锻炼、阅读等。</li>
+<li>待办事项：J人必备神器，用于描述一次性的临时任务，能够cover绝大多数的任务场景。手头事情上繁杂不知道按照什么顺序处理、或是有些任务还怕忘记，直接把它们作为待办事项记下来、完成后打勾即可。</li>
+</ul>
+<p>三类任务的添加都比较方便，在“添加”对话框中输入标题即可，具体的说明和注释可以进一步编辑，并且会显示在标题下方，界面美观、清晰。除此之外，还可以设置任务的难度、支持markdown格式编写说明、支持添加任务标签等，但是实际使用时不必过度关心这些功能，基本的记录已经足够用了，没必要把生产力工具变复杂，引入额外工作量。</p>
+<h3 id="3-多端协同功能"><a href="#3-多端协同功能" class="headerlink" title="3. 多端协同功能"></a>3. 多端协同功能</h3><p>如前所述，Habitica支持多端协同（PC端、IOS端、安卓端），作为一个开源项目是比较难得的，也是非常重要的一个功能。网页端可直接访问<a target="_blank" rel="noopener" href="https://habitica.com/">官方网站</a>，IOS&#x2F;安卓可直接在应用市场中下载同名APP。多端之间的数据都是能够实时同步的，特别适合打工人周内用电脑、周末用手机的场景需求。</p>
+<h3 id="4-角色养成功能"><a href="#4-角色养成功能" class="headerlink" title="4. 角色养成功能"></a>4. 角色养成功能</h3><p>相比于其他的任务管理工具，Habitica最大的特色就是添加了RPG游戏中的角色养成机制。作为一个社畜，过于复杂的机制我实在没有精力去了解。不过Habitica的角色养成还是比较简单的，你不需要有什么学习成本，只需要正常的进行任务管理：制订任务、完成任务，就可以自动地获得经验值、金币等。顾名思义，经验值用来提升等级，后续可以转职；金币可以用于购买装备。当然，这些只是装饰，不影响任何正常功能的使用。同时，这个工具对金币和经验的获取似乎并没有严格设限，事实上你可以自己随便设置任务并立刻点击完成来迅速获取大量金币和经验，只不过这就背离了任务管理的初心，强烈建议把这项角色养成当成锦上添花的功能，重点还是在于本身的任务管理。</p>
+<p>此外着重提一下队伍功能，个人感觉比较有意思。一个队伍中的成员可以共同完成一些攻略BOSS的任务，获得金币、经验等奖励。当然，最重要的是队伍内的成员可以在页面中进行交流。能够有机会接触这个工具的人，大多也都是些文化素质较高的人，还有很多外国人。你可以用英语和不同国家的人进行交流，甚至交一些外国朋友，具有不错的跨国社交属性。</p>
+<p>总而言之，Habitica具有基本免费、多端协同、功能充足、趣味性强等优点，是一款十分优秀的任务管理工具。不过请记住一点，无论多么便捷的任务管理工具，其核心都在于个人的使用与坚持。建议大家可以先体验起来，养成良好的使用习惯 ：）</p>
 
                 
               </div>
@@ -333,12 +342,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/" class="category-chain-item">编程开发</a>
+  <a href="/categories/%E5%BC%80%E6%BA%90%E6%8E%A2%E7%B4%A2/" class="category-chain-item">开源探索</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="category-chain-item">编程语言</a>
+  <a href="/categories/%E5%BC%80%E6%BA%90%E6%8E%A2%E7%B4%A2/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" class="category-chain-item">效率提升</a>
   
   
 
@@ -355,7 +364,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/cmd%E6%93%8D%E4%BD%9C/">#cmd操作</a>
+        <a href="/tags/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/">#任务管理</a>
+      
+        <a href="/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/">#开源工具</a>
       
     </div>
   
@@ -367,8 +378,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Windows DOS命令和批处理脚本</div>
-      <div>https://princehao.cn/posts/blog003/</div>
+      <div>Habitica：一款开源的任务管理工具</div>
+      <div>https://princehao.cn/posts/blog010/</div>
     </div>
     <div class="license-meta">
       
@@ -380,7 +391,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年1月19日</div>
+          <div>2025年5月30日</div>
         </div>
       
       
@@ -410,18 +421,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/blog004/" title="桌面版ChatGPT客户端初尝试">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">桌面版ChatGPT客户端初尝试</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/blog002/" title="2022年大事记">
-                        <span class="hidden-mobile">2022年大事记</span>
+                      <a href="/posts/blog009/" title="春秋战国历史">
+                        <span class="hidden-mobile">春秋战国历史</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
