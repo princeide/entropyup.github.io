@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://princehao.cn/posts/blog008/</loc>
+    
+    <lastmod>2025-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://princehao.cn/posts/blog010/</loc>
     
     <lastmod>2025-05-31</lastmod>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>https://princehao.cn/posts/blog009/</loc>
-    
-    <lastmod>2025-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://princehao.cn/posts/blog008/</loc>
     
     <lastmod>2025-05-31</lastmod>
     
