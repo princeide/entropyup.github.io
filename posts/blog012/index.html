@@ -1,0 +1,1048 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="王子豪">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="基于某个风电场项目，总结整理了一下风电场从发电到上网的运行原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="风电场发电基本原理与运行流程总结">
+<meta property="og:url" content="https://princehao.cn/posts/blog012/index.html">
+<meta property="og:site_name" content="Prince_hao">
+<meta property="og:description" content="基于某个风电场项目，总结整理了一下风电场从发电到上网的运行原理">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://princehao.cn/img/blog/blog012/cover.png">
+<meta property="article:published_time" content="2025-08-07T07:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-07T08:25:59.398Z">
+<meta property="article:author" content="王子豪">
+<meta property="article:tag" content="风力发电">
+<meta property="article:tag" content="原理分析">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://princehao.cn/img/blog/blog012/cover.png">
+  
+  
+  
+  <title>风电场发电基本原理与运行流程总结 - Prince_hao</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"princehao.cn","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"ScFrJRnkiiPqXM5GKGPVP7ao-gzGzoHsz","app_key":"sFpWf324A4GXm6PUVBYkc7WM","server_url":"https://scfrjrnk.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  <script src="/live2d-widget/autoload.js"></script>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>王子豪的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/fujizip.jpeg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.1)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="风电场发电基本原理与运行流程总结"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        王子豪
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-07 15:00" pubdate>
+          2025年8月7日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          7.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          31 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">风电场发电基本原理与运行流程总结</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="一、风机结构与运行原理"><a href="#一、风机结构与运行原理" class="headerlink" title="一、风机结构与运行原理"></a>一、风机结构与运行原理</h1><p>风力发电机（简称 “风机”）是将风能转化为电能的核心设备，其结构设计围绕 “高效捕捉风能、稳定传递机械能、精准转换电能” 三大目标展开。</p>
+<h2 id="（一）主要部件组成"><a href="#（一）主要部件组成" class="headerlink" title="（一）主要部件组成"></a>（一）主要部件组成</h2><p>（1）外部结构：支撑与捕捉风能的 “骨架”</p>
+<ol>
+<li>叶片（Blade）</li>
+</ol>
+<ul>
+<li>外观：通常 3 片，主流陆上风机叶片长 50-80 米，海上可达 120 米以上，截面呈 “翼型”（类似飞机机翼）。</li>
+<li>材料：以玻璃纤维增强树脂（GFRP）、碳纤维复合材料为主（ lightweight 高强度、耐疲劳、抗腐蚀）。</li>
+<li>功能：风吹过时叶片上下表面产生压力差（升力），带动叶片旋转（类似飞机机翼升力原理），将风能转化为机械能。</li>
+</ul>
+<ol start="2">
+<li>轮毂（Hub）</li>
+</ol>
+<ul>
+<li>位置：叶片与机舱之间的连接部件，呈 “三角形” 或 “圆形”，包裹叶片根部。</li>
+<li>材料：铸铁或球墨铸铁（高强度，承受叶片旋转的巨大扭矩）。</li>
+<li>核心：固定叶片，传递扭矩，集成变桨驱动部件（部分变桨电机、减速器）。</li>
+</ul>
+<ol start="3">
+<li>机舱（Nacelle）</li>
+</ol>
+<ul>
+<li>外观：流线型金属外壳（类似 “集装箱”），安装在塔架顶部，内部容纳核心动力部件和控制系统。</li>
+<li>功能：保护内部设备（如齿轮箱、发电机、控制器）免受风雨、沙尘侵蚀。</li>
+</ul>
+<ol start="4">
+<li>塔架（Tower）</li>
+</ol>
+<ul>
+<li><p>外观：圆柱形或锥形结构，陆上 60-120 米，海上更高，避开地面低风速区域。</p>
+</li>
+<li><p>材料：陆上为混凝土（下段）+ 钢结构（上段），或全钢结构；海上多为高强度钢管桩或混凝土导管架（需抗海水腐蚀和海浪冲击）。</p>
+</li>
+<li><p>功能：</p>
+<ul>
+<li>内部预留通道（爬梯、电梯），方便运维人员进入机舱。</li>
+<li>支撑机舱和叶片，将其抬高至风速稳定的高度（地面风速低且不稳定，高空更优）。</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>地基（Foundation）</li>
+</ol>
+<ul>
+<li>位置：塔架底部，埋于地下（陆上）或海底（海上）。</li>
+<li>材料：陆上多为钢筋混凝土浇筑；海上为沉箱、桩基（钢管桩或混凝土桩）。</li>
+<li>功能：承载风机重量（可达数百吨），固定塔架。</li>
+</ul>
+<p>（2）机械能传递系统：将叶片旋转传递给发电机</p>
+<ol>
+<li>主轴（Main Shaft）</li>
+</ol>
+<ul>
+<li>位置：连接轮毂与齿轮箱（或直接连接发电机，如无齿轮箱的直驱风机）。</li>
+<li>功能：将轮毂的旋转扭矩（机械能）传递给后续部件（齿轮箱或发电机），是机械能传递的 “传动轴”。</li>
+</ul>
+<ol start="2">
+<li>齿轮箱（Gearbox）</li>
+</ol>
+<ul>
+<li>适用场景：双馈风机、部分半直驱风机（直驱风机无齿轮箱）。</li>
+<li>功能：通过 “增速齿轮组” 将低转速提升至发电机所需的高转速（增速比通常 100:1 左右，10-20 转 &#x2F; 分钟 -&gt;  1500 转 &#x2F; 分钟）。</li>
+<li>注意：齿轮箱是易损部件（高速运转 + 大扭矩），需配备润滑和冷却系统，防止过热或磨损。</li>
+</ul>
+<p>（3）电能转换系统：将机械能转化为可用电能</p>
+<ol>
+<li>发电机（Generator）</li>
+</ol>
+<ul>
+<li>功能：将主轴传递的机械能（旋转运动）转化为电能，是能量转换的 “核心设备”。</li>
+</ul>
+<ol start="2">
+<li>变流器（Converter&#x2F;Inverter）</li>
+</ol>
+<ul>
+<li>位置：发电机与电网之间（或集成在机舱内）。</li>
+<li>功能：（取决于风机类型）<ul>
+<li>有功&#x2F;无功调节：通过控制电流相位和幅值，调节风机输出的有功功率（响应电网调度指令）和无功功率（维持电压稳定）。</li>
+<li>整流与逆变：将交流电（双馈）或直流电（永磁直驱）整流为直流电，再逆变为符合电网要求的稳定交流电。</li>
+<li>保护作用：当电网故障（如电压跌落）时，变流器可快速切断或调节输出，保护风机和电网设备。</li>
+</ul>
+</li>
+</ul>
+<p>（4）控制系统：风机的 “大脑”，保障安全与效率</p>
+<ol>
+<li>变桨系统（Pitch System）</li>
+</ol>
+<ul>
+<li>组成：变桨电机（每个叶片 1 台）、减速器、传感器、控制器。</li>
+<li>位置：轮毂内（靠近叶片根部）。</li>
+<li>功能：<ul>
+<li>调节转速：根据风速自动调整叶片角度（“桨距角”）：风速低时，叶片放平（桨距角小），最大化捕捉风能；风速过高（超过额定风速，如 12-25m&#x2F;s）时，叶片偏转（桨距角增大），减少受风面积，降低转速，防止发电机超速损坏。</li>
+<li>紧急停机：当风速超极限（如≥25m&#x2F;s）或设备故障时，变桨系统快速将叶片转到 “顺桨” 位置（桨距角 90°），叶片几乎不迎风，风机迅速停机。</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>偏航系统（Yaw System）</li>
+</ol>
+<ul>
+<li>组成：偏航电机、减速器、风向标、制动装置（刹车片）。</li>
+<li>位置：机舱底部与塔架顶部的连接部位。</li>
+<li>功能：<ul>
+<li>对准风向：风向标实时检测风向，偏航电机驱动机舱旋转（左右转动），使叶片始终正对来风（偏差≤5°），最大化风能利用率。</li>
+<li>防缠绕：机舱旋转时，电缆可能缠绕，系统会记录旋转角度，超过设定值（如 ±720°）时自动反向旋转 “解缆”。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>主控系统（Main Control System）</li>
+</ol>
+<ul>
+<li>组成：PLC、传感器（风速仪、风向仪、转速传感器、温度传感器等）、通信模块。</li>
+<li>功能：实时监控、智能控制（变桨、偏航、变流器）、故障保护。</li>
+</ul>
+<p>（5）辅助系统：保障设备稳定运行</p>
+<ul>
+<li>冷却系统：维持发电机、变流器、齿轮箱等设备在正常温度范围。</li>
+<li>润滑系统：对齿轮箱、主轴轴承等转动部件进行润滑油油位、油压监测，定时补油或换油。</li>
+<li>防雷系统：避免设备被雷击损坏。</li>
+</ul>
+<h2 id="（二）主要分类方式"><a href="#（二）主要分类方式" class="headerlink" title="（二）主要分类方式"></a>（二）主要分类方式</h2><p>（1）按照发电机的原理类型进行分类：</p>
+<ul>
+<li>双馈异步发电机：感应电机原理（DFIG）。定子接入电网通过励磁电流（无功输入）产生旋转磁场，转子通过滑环和电刷连接至变流器，并通过切割磁感线感应出有功电流、经由变流器输出至电网。与此同时，转子电流形成的磁场又会在定子中形成感应出有功电流，这部分电流直接输出至电网。另一方面，转子绕组能够接受来自变流器的无功可调励磁，调整风机发电功率：<ul>
+<li>超同步运行（风机转速大于电网同步转速）：转子向电网输出有功，同时吸收无功用于励磁。</li>
+<li>亚同步运行（风机转速小于电网同步转速）：转子从电网吸收有功，与风轮机械能叠加后通过定子输出（以保证定子输出额定有功），同时吸收无功用于励磁。</li>
+</ul>
+</li>
+</ul>
+<p>在这一过程中，转子可通过变流器在定子转速±30%范围左右波动（异步电机），定子输出电能占大部分（70-75%），转子输出电能占小部分（25-30%）。</p>
+<ul>
+<li>永磁同步发电机：（永磁）同步电机原理（PMSG），转子内置永磁体产生相对转子的恒定磁场，风机驱动转子转动形成旋转磁场，定子绕组切割磁感线产生感应电流，通过变流器整流为直流电、再逆变为与电网同频同压的交流电后接入电网（全功率变流器）。在这一过程中，有功功率单向从定子流向电网，变流器可根据电网电压高&#x2F;低选择吸收&#x2F;发出无功。</li>
+</ul>
+<p>（2）按照传动结构与发电机控制方式进行分类：</p>
+<ul>
+<li>直驱风机：风轮直接与发电机转子连接，中间无齿轮箱，通过 “多极发电机”（增加磁极对数）直接适应风轮的低转速，无需转速提升。一般地，直驱风机往往搭配永磁同步发电机。</li>
+<li>非直驱风机（双馈风机）：风轮与发电机之间串联齿轮箱，通过齿轮箱将风轮的低转速（10-20 转 &#x2F; 分钟）提升至发电机所需的高转速（1000-1500 转 &#x2F; 分钟），再驱动发电机发电。一般地，双馈风机往往搭配双馈异步发电机。</li>
+</ul>
+<p>（3）两类风机的特性对比：</p>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>双馈异步发电机非直驱风机</th>
+<th>永磁同步发电机直驱风机</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>结构</td>
+<td>发电机体积小（少极设计），有齿轮箱</td>
+<td>发电机体积大（多极设计），无齿轮箱</td>
+</tr>
+<tr>
+<td>运行性能</td>
+<td>由于齿轮箱、滑环和电刷存在，可靠性较低、维护成本较高，响应速度较慢</td>
+<td>与前者相反</td>
+</tr>
+<tr>
+<td>变流器</td>
+<td>部分功率变流器，容量小，成本低</td>
+<td>全功率变流器，容量大，成本高</td>
+</tr>
+<tr>
+<td>输电特性</td>
+<td>转子转速可调，有功调节相对灵活；但定子无功受电网“钳位”，无功调节依赖转子变流器和SVG设备，灵活性低定子直接并网，电网电压跌落时可能烧毁变流器，低电压穿越（LVRT）能力弱需要外部电网提供励磁电源</td>
+<td>全功率变流器，有功无功调节范围非常广定子变流器可快速切断或调节电流，低电压穿越（LVRT）能力强永磁体提供励磁，无需外部励磁电源</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>陆地风场（中高风速）、早期项目为主</td>
+<td>陆地低风速风场、海上风场（可靠性要求高），近年应用更广泛</td>
+</tr>
+</tbody></table>
+<h1 id="二、风电场运行与调控流程"><a href="#二、风电场运行与调控流程" class="headerlink" title="二、风电场运行与调控流程"></a>二、风电场运行与调控流程</h1><h2 id="（一）风电场从发电到并网的总体运行流程"><a href="#（一）风电场从发电到并网的总体运行流程" class="headerlink" title="（一）风电场从发电到并网的总体运行流程"></a>（一）风电场从发电到并网的总体运行流程</h2><ol>
+<li><p>风机捕获风能，转化为机械能</p>
+</li>
+<li><p>机械能通过发电机转化为电能</p>
+</li>
+<li><p>单台风机输出的电能（690V 低压电）通过箱变升压、集电系统汇集，集中输送至升压站</p>
+</li>
+</ol>
+<ul>
+<li>每台风机配套 1 台箱式变压器（箱变），首先将 690V 低压电升压至中压（常见 35kV 或 10kV），减少集电线路的功率损耗</li>
+<li>多台风机的中压电通过电缆（地下电缆为主，避免风场内部架空线受风干扰）汇集，形成 “集电环网” 或 “放射式线路”，最终输送至风电场升压站</li>
+</ul>
+<ol start="4">
+<li>中压电能（35kV）进一步升压，以满足远距离输电要求、减少输电损耗</li>
+</ol>
+<ul>
+<li>通过升压站主变压器（主变），将 35kV 中压电升压至110kV&#x2F;220kV&#x2F;500kV等，以提升远距离传输能力</li>
+<li>设置无功补偿装置，如静止无功补偿器（SVC）或静止无功发生器（SVG），补偿线路和设备的无功损耗、避免电压跌落</li>
+<li>设置滤波器，消除变流器产生的谐波（如全功率变流器会产生高频谐波），确保电能质量符合电网标准</li>
+</ul>
+<ol start="5">
+<li>升压后的高压电通过输电线路送至 “公共连接点（PCC）”，经检测合格后并入电网主网</li>
+</ol>
+<ul>
+<li>通过并网断路器前的测控装置，实时对比风电场输出参数与电网参数一致（频率偏差≤±0.2Hz，电压偏差≤±5%）</li>
+<li>根据电网调度指令，通过变流器调整有功功率，通过变流器或SVG调整无功功率</li>
+<li>当同步条件满足时，并网断路器闭合，风电场电能正式并入电网</li>
+</ul>
+<h2 id="（二）电网对风电场的控制"><a href="#（二）电网对风电场的控制" class="headerlink" title="（二）电网对风电场的控制"></a>（二）电网对风电场的控制</h2><p>（1）电网调度的职责划分</p>
+<table>
+<thead>
+<tr>
+<th>调度层级</th>
+<th>管辖风电场范围</th>
+<th>核心职责</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>省调</td>
+<td>220kV及以上并网等级的风电场（大型风电场，一般≥100MW）</td>
+<td>1. 制定风电场有功 &#x2F; 无功计划；2. 协调跨区域风电场与其他电源（火电、水电）的出力平衡；3. 处理风电场与主干网的并网控制；4. 应对大范围电网故障（如频率崩溃、电压失稳）时的紧急调控。</td>
+</tr>
+<tr>
+<td>地调</td>
+<td>110kV 及以下电压等级并网的风电场（中小型风电场，通常 &lt; 100MW）</td>
+<td>1. 执行省调下达的分计划，细化本地风电场的有功 &#x2F; 无功指令；2. 监控风电场与地区配电网（110kV 及以下）的接口电压、潮流；3. 协调风电场与本地负荷的实时平衡（如乡镇、工业园区负荷）；4. 处理风电场接入配电网的故障（如线路过载、电压越限）。</td>
+</tr>
+</tbody></table>
+<p>除此之外，部分超大型海上风电场由国调直接参与协调。</p>
+<p>（2）自动发电控制（AGC）：有功功率和频率调节</p>
+<p>AGC 指令的生成逻辑：</p>
+<ul>
+<li>省调 &#x2F; 地调 AGC 主站根据全网实时负荷、其他电源（火电、水电）的可调出力、风电功率预测数据（超短期预测，0-4 小时），计算风电场的 “有功功率目标值”。</li>
+<li>指令通过电力调度专用网络（SPDnet，光纤传输）下发至风电场的AGC子站，通常集成在风电场监控系统 SCADA 中。</li>
+</ul>
+<p>风电场的有功调节过程：</p>
+<ul>
+<li>指令分解：风电场 AGC 子站将总目标值按 “单机容量比例” 或 “当前可发能力” 分配给各台风机。</li>
+<li>出力调节：单台风机通过变流器（PMSG 通过全功率变流器，DFIG 通过转子变流器）调节有功：<ul>
+<li>若当前出力低于目标值：增大变流器有功指令，PMSG 提高定子电流有功分量 &#x2F; DFIG 增加转子侧有功输出。若风速不足则反馈 “出力受限”。</li>
+<li>若当前出力高于目标值：降低变流器有功指令，减小电磁转矩，间接降低风轮吸收的风能，必要时配合变桨系统减速。</li>
+</ul>
+</li>
+<li>反馈校验：风机实时将实际出力上传至风电场 AGC 子站，子站汇总后反馈给省调 &#x2F; 地调 AGC 主站，主站根据偏差微调指令，直至偏差在允许范围内（通常≤2%）。</li>
+</ul>
+<p>（3）自动电压控制（AVC）：无功功率和电压调节</p>
+<p>AVC 指令的生成逻辑：</p>
+<ul>
+<li>省调 &#x2F; 地调 AVC 主站实时监测 PCC 点电压、线路无功潮流，结合 “电压控制曲线”计算风电场的 “无功目标值” 或 “电压目标值”。例如，（如 PCC 点电压低于 210kV 时需增发无功，高于 230kV 时需吸收无功）。</li>
+<li>与AGC指令类似，AVC指令通过专用网络下发至风电场AVC子站。</li>
+</ul>
+<p>风电场的无功调节手段：</p>
+<ul>
+<li>发电机变流器：PMSG 和 DFIG 的变流器均可调节无功输出（通过控制定子 &#x2F; 转子电流的无功分量），例如 PMSG 的定子电流可分解为有功（Id）和无功（Iq）分量，AVC 指令通过调整 Iq 实现无功调节（增发无功时增大 Iq，吸收时减小 Iq）。</li>
+<li>无功补偿设备：当变流器的无功调节能力不足时（如低风速时发电机无功容量有限），启动静止无功发生器（SVG）或并联电容器组。</li>
+<li>调节优先级：优先使用变流器（响应速度快，毫秒级），不足时投入 SVG（秒级），再不足时调整电容器 &#x2F; 电抗器（分钟级）。</li>
+</ul>
+<p>风电场的无功调节策略：</p>
+<ul>
+<li>电压闭环控制：以 PCC 点电压为目标，当实际电压偏离目标值，AVC 子站自动计算所需无功补偿量，调节设备输出。</li>
+<li>无功分区平衡：对于大型风电场（多集电线路），按 “集电线路分区” 分配无功任务，减少跨区无功传输损耗。</li>
+</ul>
+<p>（4）故障与应急控制</p>
+<ol>
+<li>低电压穿越（LVRT）与高电压穿越（HVRT）：</li>
+</ol>
+<ul>
+<li>当电网发生短路故障导致 PCC 点电压骤降时，风电场需在规定时间内（如电压跌落至 0% 时维持并网≥150ms）不解列，并尽可能输出无功支撑电压恢复（这是电网强制要求，否则会被处罚）。</li>
+<li>高电压穿越（如电网甩负荷导致电压骤升）时，风电场需短时耐受高电压（如 1.3 倍额定电压持续 2s），避免脱网加剧电网波动。</li>
+</ul>
+<ol start="2">
+<li>紧急限负荷（弃风调控）：</li>
+</ol>
+<ul>
+<li>当电网接纳能力不足（如负荷骤降、其他电源无法快速减出力），省调会下达 “紧急限荷指令”（如立即将出力从 100MW 降至 50MW），风电场需在规定时间内（如 10 秒内）完成，否则调度中心可远程断开并网断路器（“强切”）。</li>
+<li>弃风指令通常与 “风电功率预测偏差” 挂钩（如预测 100MW，实际 120MW，需弃 20MW）。</li>
+</ul>
+<ol start="3">
+<li>黑启动支持（部分场景）：</li>
+</ol>
+<ul>
+<li>新型风电场（配合储能）可参与电网黑启动：当电网全停后，风电场通过储能供电启动自身设备，逐步恢复出力，为周边负荷提供启动电源，协助电网恢复。</li>
+</ul>
+<h1 id="三、风电场中控室主要机柜及其功能"><a href="#三、风电场中控室主要机柜及其功能" class="headerlink" title="三、风电场中控室主要机柜及其功能"></a>三、风电场中控室主要机柜及其功能</h1><ol>
+<li>35kV 母线保护屏</li>
+</ol>
+<p>如前所述，各风机通过箱变进行一次升压达到35kV，并通过母线进行电能汇集到达升压站。该控制柜专门用于监测 35kV 母线的运行状态，当母线发生故障时快速触发保护动作（比如切断故障线路），防止故障扩散到整个电网，保护母线及连接设备的安全。</p>
+<ol start="2">
+<li>公用测控屏</li>
+</ol>
+<p>对风电场内所有设备共用的公共系统进行测量和控制：</p>
+<ul>
+<li>测量：监测公共部分的关键数据，比如全站的直流电源电压、UPS 状态、消防系统信号、机房温湿度、断路器的分合闸状态等；</li>
+<li>控制：远程操作公共设备，比如控制机房照明、通风系统启停，或紧急情况下切断公共电源等。</li>
+</ul>
+<ol start="3">
+<li>关口计量屏</li>
+</ol>
+<p>关口指风电场与电网公司结算电费的 “计量节点”。关口计量屏的核心功能是高精度计量风电场向电网输送的电量（有功、无功），相当于电力系统的 “财务电表”。内部装有经国家认证的高精度电能表、电流 &#x2F; 电压互感器等设备，具有极高的准确性和防篡改能力。</p>
+<ol start="4">
+<li>线路光纤差动柜</li>
+</ol>
+<p>线路指风电场连接电网的输电线路或内部数据传输网络。采用“光纤差动保护” 原理保护线路安全，具体而言，线路两端会通过光纤实时传递电流信号，当线路中间发生短路等故障时，两端电流会出现差异，柜子内的装置能快速识别并触发跳闸，切断故障线路。</p>
+<ol start="5">
+<li>线路变压器测控屏</li>
+</ol>
+<p>针对风机箱变的 “监测 + 控制” 综合装置。实时采集线路的电流、电压、功率，变压器的温度、油位（油浸式）、负荷等数据，同时远程操作线路断路器的分合、变压器的启停等。</p>
+<ol start="6">
+<li>继电保护试验电源屏</li>
+</ol>
+<p>为风电场继电保护装置（如之前提到的 35kV 母线保护屏、主变保护屏等）的调试、校验和试验提供稳定、可靠且可调节的电源。电源屏可输出不同电压等级（交流、直流）、频率的电源，满足各类继电保护设备的测试需求。</p>
+<ol start="7">
+<li>电能质量在线监测屏</li>
+</ol>
+<p>实时监测风电场输出电能的质量参数，包括电压偏差、频率偏差、谐波含量、电压波动与闪变、三相电压不平衡度等。通过对这些参数的监测和分析，可以评估风电场电能是否符合并网标准，以及判断电能质量问题对电网和用电设备的影响。</p>
+<ol start="8">
+<li>PT 转接屏</li>
+</ol>
+<p>PT即电压互感器（Potential Transformer ），将一次侧的高电压转换为二次侧的低电压信号，从而传输到不同的控制柜中进行测量。PT转接柜类似信号中转站，确保电压信号准确无误地传输到对应的装置。当某一个测量或保护装置需要检修时，可以通过 PT 转接屏将其对应的电压信号切断，不影响其他设备的正常运行。</p>
+<ol start="9">
+<li>功角测量屏</li>
+</ol>
+<p>功角是电力系统分析和运行中的一个重要参数，它反映了发电机转子的位置和系统同步运行的状态。如果功角变化过大，可能会导致发电机与电网之间失去同步，引发系统振荡。功角测量屏实时监测功角的变化情况，当发现功角接近临界值时，及时向调度系统发出预警。</p>
+<ol start="10">
+<li>网络通信屏</li>
+</ol>
+<p>构建风电场内部的网络通信架构，如风机、各类保护测控屏、监控系统等之间的数据传输。内部搭建以太网等通信网络，采用相应的通信协议（如 Modbus、IEC61850 等），实现数据的可靠传输。</p>
+<ol start="11">
+<li>远动通信屏</li>
+</ol>
+<p>构建风电场和上级调度中心的网络通信架构将风电场内的实时运行数据（如发电量、电压、电流、设备状态等）按照规定的通信规约（如 CDT、IEC104 等）进行编码和打包，然后通过通信信道（如光纤、微波等）发送到上级调度中心。同时接收调度中心下发的控制指令，并将其转发给相应的设备执行。</p>
+<ol start="12">
+<li>故障录波监测屏</li>
+</ol>
+<p>风电场电气系统故障分析的 “黑匣子”，实时记录故障发生前后的关键电气量和状态量，为事后追溯故障原因、校验保护动作正确性提供依据。通过录波数据可分析故障类型（如单相接地、三相短路）、故障点位置、保护动作是否准确（如动作时间是否符合整定要求）。</p>
+<ol start="13">
+<li>保护故障信息屏</li>
+</ol>
+<p>风电场保护装置的 “信息汇总中心”，负责集中采集、展示和上传各保护装置的故障及告警信息，实现保护系统的集中监控，包括保护动作信号（如跳闸、重合闸）、告警信号（如过温、通讯中断）、自检信息（如装置异常）等。</p>
+<ol start="14">
+<li>风功率预测服务器屏</li>
+</ol>
+<p>接入风电场本地气象站（风速、风向、温度、气压）、周边区域气象预报数据，结合风机历史运行数据进行风机功率预测，为电网调度和内部运行优化提供依据。包括超短期预测（15 分钟 - 4 小时）、短期预测（4 - 72 小时）、中长期预测（数天-数月）等。</p>
+<ol start="15">
+<li>AGC&#x2F;AVC服务屏</li>
+</ol>
+<p>实现风电场AGC&#x2F;AVC调节，细节可见前文。</p>
+<ol start="16">
+<li>UPS 电源屏 直流馈电屏 直流充电屏 直流电池屏（共同组成直流电源供电系统）</li>
+</ol>
+<p>UPS 电源屏：为不间断设备提供应急电源，包括监控系统服务器、保护故障信息屏、远动通信屏、网络通信屏、风功率预测服务器等。</p>
+<p>直流馈电屏：将直流系统的电源（来自直流充电屏或直流电池屏）分配到各个需要直流电源的设备，同时监测各回路的运行状态。包括断路器操作机构、继电保护装置、信号指示灯等。</p>
+<p>直流充电屏：为直流电池屏内的蓄电池组充电，并在正常运行时为直流负载提供稳定的直流电源，维持蓄电池处于 “满荷待命” 状态。</p>
+<p>直流电池屏：内部安装蓄电池组，提供应急供电。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/AI-%E8%83%BD%E6%BA%90/" class="category-chain-item">AI+能源</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/AI-%E8%83%BD%E6%BA%90/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="category-chain-item">基础知识</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%A3%8E%E5%8A%9B%E5%8F%91%E7%94%B5/">#风力发电</a>
+      
+        <a href="/tags/%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/">#原理分析</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>风电场发电基本原理与运行流程总结</div>
+      <div>https://princehao.cn/posts/blog012/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>王子豪</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月7日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/blog011/" title="随笔·其二：事物是在不断发展和变化的">
+                        <span class="hidden-mobile">随笔·其二：事物是在不断发展和变化的</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.17/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"ScFrJRnkiiPqXM5GKGPVP7ao-gzGzoHsz","appKey":"sFpWf324A4GXm6PUVBYkc7WM","path":"window.location.pathname","placeholder":"说，都可以说！","avatar":"hide","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
